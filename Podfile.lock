@@ -1,3 +1,28 @@
-PODFILE CHECKSUM: 043ed6fd4b7028db39c0b2ac3b421aa5baaa4806
+PODS:
+  - Arcane (2.1.1)
+  - GMSNetworkLayer (1.1.3)
+
+DEPENDENCIES:
+  - Arcane (from `https://github.com/onmyway133/Arcane`)
+  - GMSNetworkLayer (~> 1.1)
+
+SPEC REPOS:
+  trunk:
+    - GMSNetworkLayer
+
+EXTERNAL SOURCES:
+  Arcane:
+    :git: https://github.com/onmyway133/Arcane
+
+CHECKOUT OPTIONS:
+  Arcane:
+    :commit: 30248144823e890981b38e7908c9b2b8204c3f51
+    :git: https://github.com/onmyway133/Arcane
+
+SPEC CHECKSUMS:
+  Arcane: dd18aa22c97de24a6d2cbab703d74efff9094bb0
+  GMSNetworkLayer: 0e72d1c2b285f439bf24e7ede18acc7e07f0f312
+
+PODFILE CHECKSUM: 14018346b7fe894ae2691a109ee55ad7462107ea
 
 COCOAPODS: 1.10.1
