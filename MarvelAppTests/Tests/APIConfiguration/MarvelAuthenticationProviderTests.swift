@@ -14,7 +14,7 @@ class MarvelAuthenticationProviderTests: XCTestCase {
                                                                       privateKey: "privateFakeKey",
                                                                       timestamp: 123456) as? [String: String]
 
-        XCTAssertEqual(expected, ["apiKey": "publicFakeKey",
+        XCTAssertEqual(expected, ["apikey": "publicFakeKey",
                                   "hash": "631878bdbb79b05ebbfeb07f1467c776",
                                   "ts": "123456"])
     }
