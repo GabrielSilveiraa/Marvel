@@ -1,0 +1,9 @@
+language: swift
+osx_image: xcode12.5.1
+xcode_workspace: MarvelApp.xcworkspace
+xcode_scheme: MarvelApp
+xcode_destination: platform=iOS Simulator,OS=14.5,name=iPhone 12 Pro Max
+before_install:
+  - pod install --repo-update
+after_success:
+  - bash <(curl -s https://codecov.io/bash) -t bdcafa72-1def-4d24-9376-e84e75233a01
