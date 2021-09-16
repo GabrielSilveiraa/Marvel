@@ -1,5 +1,5 @@
 //
-//  MarvelServiceTests.swift
+//  CharactersServiceTests.swift
 //  MarvelAppTests
 //
 //  Created by Gabriel Miranda Silveira on 14/09/21.
@@ -10,15 +10,15 @@ import Combine
 import GMSNetworkLayer
 @testable import MarvelApp
 
-class MarvelServiceTests: XCTestCase {
-    var service: MarvelService!
+class CharactersServiceTests: XCTestCase {
+    var service: CharactersService!
     var mockNetworkManager: MockNetworkManager!
     var subscriptions: Set<AnyCancellable>!
 
     override func setUp() {
         super.setUp()
         mockNetworkManager = MockNetworkManager()
-        service = MarvelService(networkManager: mockNetworkManager)
+        service = CharactersService(networkManager: mockNetworkManager)
         subscriptions = Set<AnyCancellable>()
     }
 

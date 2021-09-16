@@ -10,12 +10,21 @@ import XCTest
 
 class MarvelAuthenticationProviderTests: XCTestCase {
     func testGetAuthentication() {
-        let expected = MarvelAuthenticationProvider.getAuthentication(publicKey: "publicFakeKey",
-                                                                      privateKey: "privateFakeKey",
-                                                                      timestamp: 123456) as? [String: String]
+        let authenticationProvider = MarvelAuthenticationProvider(hashProvider: MockHashProvider.self,
+                                                                  publicKey: "publicFakeKey",
+                                                                  privateKey: "privateFakeKey",
+                                                                  timestamp: 123456)
 
-        XCTAssertEqual(expected, ["apikey": "publicFakeKey",
-                                  "hash": "631878bdbb79b05ebbfeb07f1467c776",
-                                  "ts": "123456"])
+        let authentication = authenticationProvider.getAuthentication()
+
+        XCTAssertEqual(authentication?.apiKey, "publicFakeKey")
+        XCTAssertEqual(authentication?.hash, "123456privateFakeKeypublicFakeKey")
+        XCTAssertEqual(authentication?.timestamp, "123456")
+    }
+}
+
+final class MockHashProvider: HashProviderProtocol {
+    static func MD5(_ string: String) -> String? {
+        string
     }
 }

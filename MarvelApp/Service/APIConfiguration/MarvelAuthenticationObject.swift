@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// The authentication object model. It describes the needed parameters for authenticating the app with the server.
 struct MarvelAuthenticationObject: Encodable {
     let apiKey: String
     let hash: String

@@ -7,24 +7,40 @@
 
 import Arcane
 
+/// Responsible for retrieving the authentication configs, as we need to send some authentication parameters in every service request
+protocol MarvelAuthenticationProviderProtocol {
+    func getAuthentication() -> MarvelAuthenticationObject?
+}
+
 final class MarvelAuthenticationProvider {
-    static func getAuthentication(publicKey: String = Constants.publicApiKey,
-                                  privateKey: String = Constants.privateApiKey,
-                                  timestamp: Int = Int(Date().timeIntervalSince1970)) -> [String: Any]? {
+    private let hashProvider: HashProviderProtocol.Type
+    private let publicKey: String
+    private let privateKey: String
+    private let timestamp: Int
 
-        guard let hash = Hash.MD5("\(timestamp)\(privateKey)\(publicKey)") else {
+    init(hashProvider: HashProviderProtocol.Type = Hash.self,
+         publicKey: String = Constants.publicApiKey,
+         privateKey: String = Constants.privateApiKey,
+         timestamp: Int = Int(Date().timeIntervalSince1970)) {
+
+        self.hashProvider = hashProvider
+        self.publicKey = publicKey
+        self.privateKey = privateKey
+        self.timestamp = timestamp
+    }
+}
+
+extension MarvelAuthenticationProvider: MarvelAuthenticationProviderProtocol {
+    /// It does a MD5 hash with some saved properties.
+    /// - Returns:The object to be encoded into the request parameters
+    func getAuthentication() -> MarvelAuthenticationObject? {
+        guard let hash = hashProvider.MD5("\(timestamp)\(privateKey)\(publicKey)") else {
             return nil
         }
 
-        let authenticationObject = MarvelAuthenticationObject(apiKey: publicKey,
-                                                              hash: hash,
-                                                              timestamp: timestamp.description)
-        do {
-            return try authenticationObject.asDictionary()
-        } catch {
-            print("MarvelAuthenticationObject not encoded: " + error.localizedDescription)
-            return nil
-        }
+        return MarvelAuthenticationObject(apiKey: publicKey,
+                                          hash: hash,
+                                          timestamp: timestamp.description)
     }
 }
 
@@ -34,3 +50,9 @@ private extension MarvelAuthenticationProvider {
         static let privateApiKey = "183421a27ce97377f87d336a2e7cbc04b526ba62"
     }
 }
+
+protocol HashProviderProtocol {
+    static func MD5(_ string: String) -> String?
+}
+
+extension Hash: HashProviderProtocol {}

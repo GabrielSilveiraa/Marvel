@@ -7,8 +7,22 @@
 
 import GMSNetworkLayer
 
-enum MarvelAPI {
+
+/// Responsible for declaring every possible route for the MarvelAPI
+enum MarvelAPIRoute {
     case getCharacters(offset: Int)
+}
+
+/// Contains the needed logic for creating any route from `MarvelAPIRoute`
+final class MarvelAPI {
+    private let routeType: MarvelAPIRoute
+    private let authenticationProvider: MarvelAuthenticationProviderProtocol
+
+    init(routeType: MarvelAPIRoute,
+         authenticationProvider: MarvelAuthenticationProviderProtocol = MarvelAuthenticationProvider()) {
+        self.routeType = routeType
+        self.authenticationProvider = authenticationProvider
+    }
 }
 
 extension MarvelAPI: EndPointType {
@@ -20,32 +34,47 @@ extension MarvelAPI: EndPointType {
     }
 
     var path: String {
-        "/characters"
+        switch routeType {
+        case .getCharacters:
+            return "/characters"
+        }
     }
 
     var httpMethod: HTTPMethod {
-        .get
+        switch routeType {
+        case .getCharacters:
+            return .get
+        }
     }
 
     var encoding: ParameterEncoding? {
-        .urlEncoding
+        switch routeType {
+        case .getCharacters:
+            return .urlEncoding
+        }
     }
 
     var parameters: [String : Any] {
         var parameters: [String : Any] = [:]
 
-        switch self {
+        switch routeType {
         case .getCharacters(let offset):
             parameters["offset"] = offset
         }
 
+        do {
+            if let authenticationParameters = try authenticationProvider.getAuthentication()?.asDictionary() {
+                return parameters.merging(authenticationParameters) { (_, new) in new }
+            }
+        } catch {
+            print("MarvelAuthenticationObject not encoded: " + error.localizedDescription)
+        }
 
-        guard let authenticationParameters = MarvelAuthenticationProvider.getAuthentication() else { return parameters }
-        return parameters.merging(authenticationParameters) { (_, new) in new }
+        return parameters
     }
 }
 
-fileprivate extension MarvelAPI {
+private extension MarvelAPI {
     enum Constants {
         static let baseURL = "https://gateway.marvel.com/v1/public"
     }

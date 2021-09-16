@@ -13,9 +13,9 @@
 		CD52FB4E26F10146008DFD07 /* Encodable+Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD52FB4D26F10146008DFD07 /* Encodable+Dictionary.swift */; };
 		CD52FB5226F104EA008DFD07 /* MarvelAuthenticationProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD52FB5126F104EA008DFD07 /* MarvelAuthenticationProviderTests.swift */; };
 		CD52FB5426F10F5E008DFD07 /* MarvelAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD52FB5326F10F5E008DFD07 /* MarvelAPITests.swift */; };
-		CD52FB5626F11231008DFD07 /* MarvelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD52FB5526F11231008DFD07 /* MarvelService.swift */; };
+		CD52FB5626F11231008DFD07 /* CharactersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD52FB5526F11231008DFD07 /* CharactersService.swift */; };
 		CD52FB5926F11847008DFD07 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD52FB5826F11847008DFD07 /* Character.swift */; };
-		CD52FB5D26F11DA9008DFD07 /* MarvelServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD52FB5C26F11DA9008DFD07 /* MarvelServiceTests.swift */; };
+		CD52FB5D26F11DA9008DFD07 /* CharactersServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD52FB5C26F11DA9008DFD07 /* CharactersServiceTests.swift */; };
 		CD52FB6226F11F70008DFD07 /* XCTestCase+Decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD52FB6126F11F70008DFD07 /* XCTestCase+Decode.swift */; };
 		CD52FB6526F126EC008DFD07 /* Characters.json in Resources */ = {isa = PBXBuildFile; fileRef = CD52FB6426F126EC008DFD07 /* Characters.json */; };
 		CDE235AD26F0E4FB0000DC99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE235AC26F0E4FB0000DC99 /* AppDelegate.swift */; };
@@ -58,9 +58,9 @@
 		CD52FB4D26F10146008DFD07 /* Encodable+Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Dictionary.swift"; sourceTree = "<group>"; };
 		CD52FB5126F104EA008DFD07 /* MarvelAuthenticationProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelAuthenticationProviderTests.swift; sourceTree = "<group>"; };
 		CD52FB5326F10F5E008DFD07 /* MarvelAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelAPITests.swift; sourceTree = "<group>"; };
-		CD52FB5526F11231008DFD07 /* MarvelService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelService.swift; sourceTree = "<group>"; };
+		CD52FB5526F11231008DFD07 /* CharactersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersService.swift; sourceTree = "<group>"; };
 		CD52FB5826F11847008DFD07 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
-		CD52FB5C26F11DA9008DFD07 /* MarvelServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelServiceTests.swift; sourceTree = "<group>"; };
+		CD52FB5C26F11DA9008DFD07 /* CharactersServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersServiceTests.swift; sourceTree = "<group>"; };
 		CD52FB6126F11F70008DFD07 /* XCTestCase+Decode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Decode.swift"; sourceTree = "<group>"; };
 		CD52FB6426F126EC008DFD07 /* Characters.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Characters.json; sourceTree = "<group>"; };
 		CDE235A926F0E4FB0000DC99 /* MarvelApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,7 +162,7 @@
 		CD52FB5F26F11E6E008DFD07 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				CD52FB5C26F11DA9008DFD07 /* MarvelServiceTests.swift */,
+				CD52FB5C26F11DA9008DFD07 /* CharactersServiceTests.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -255,7 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				CDE235E326F0FD360000DC99 /* APIConfiguration */,
-				CD52FB5526F11231008DFD07 /* MarvelService.swift */,
+				CD52FB5526F11231008DFD07 /* CharactersService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -516,7 +516,7 @@
 				CD52FB4E26F10146008DFD07 /* Encodable+Dictionary.swift in Sources */,
 				CDE235AF26F0E4FB0000DC99 /* SceneDelegate.swift in Sources */,
 				CDE235DE26F0F7320000DC99 /* MarvelAPI.swift in Sources */,
-				CD52FB5626F11231008DFD07 /* MarvelService.swift in Sources */,
+				CD52FB5626F11231008DFD07 /* CharactersService.swift in Sources */,
 				CDE235E226F0FC530000DC99 /* MarvelAPIAuthenticationProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -526,7 +526,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD52FB6226F11F70008DFD07 /* XCTestCase+Decode.swift in Sources */,
-				CD52FB5D26F11DA9008DFD07 /* MarvelServiceTests.swift in Sources */,
+				CD52FB5D26F11DA9008DFD07 /* CharactersServiceTests.swift in Sources */,
 				CD52FB5426F10F5E008DFD07 /* MarvelAPITests.swift in Sources */,
 				CD52FB5226F104EA008DFD07 /* MarvelAuthenticationProviderTests.swift in Sources */,
 			);
