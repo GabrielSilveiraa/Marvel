@@ -1,0 +1,6 @@
+framework module GMSNetworkLayer {
+  umbrella header "GMSNetworkLayer-umbrella.h"
+
+  export *
+  module * { export * }
+}

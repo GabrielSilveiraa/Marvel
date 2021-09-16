@@ -3,69 +3,159 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2FDB1BEAC65E9AB8F5FFEB503AA801AC /* Pods-MarvelAppTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AF05D2B606ABB1B07C6EA52793D06847 /* Pods-MarvelAppTests-dummy.m */; };
-		3332A59F9FF4B2F4FA63B6B9C13A90D5 /* Pods-MarvelApp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EC486FEC19DC434CCDD9B8D9ADCE0B47 /* Pods-MarvelApp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3FA931727C6E7836003F08A12A5A5842 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		87A6F907B277F5A3309CACB1ED804A33 /* Pods-MarvelApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D270C2078349A4E1EBDD090F8D10D4A /* Pods-MarvelApp-dummy.m */; };
+		09F23DB6C787E6F632336A624B8C0CD3 /* HMAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649689EDBAA02EE1DB0D64DD67A59212 /* HMAC.swift */; };
+		154486AF90F86D2C688BD11634484E74 /* GMSNetworkLayer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EADB9C6713BEC647F3613413E781FC9 /* GMSNetworkLayer-dummy.m */; };
+		19EBC81B4C633E4A59901ADA169B8012 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90457D61C95F67060B46BA392F8A22DA /* NetworkManager.swift */; };
+		203596223F7D1F50F7F2C30A75CB35E2 /* NetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3623A022849A38F75852ED655ABBF11 /* NetworkResponse.swift */; };
+		2FDB1BEAC65E9AB8F5FFEB503AA801AC /* Pods-MarvelAppTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 58291AA99694A38B5B358D32B644296D /* Pods-MarvelAppTests-dummy.m */; };
+		38E2967AA28847BF2DC9178E7E50A5CC /* Pods-MarvelApp-MarvelAppUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 13049CD7B0C41979FA9508175F4798A3 /* Pods-MarvelApp-MarvelAppUITests-dummy.m */; };
+		3A64EFD64F5A6A85B63312273502CB09 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546E393C810C1995558CB8BC5D8707D8 /* HTTPMethod.swift */; };
+		3DC7B990FFAE128996B5D98826CD9015 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		3FD1EC0933BB03C53F2FD5809B849486 /* GMSNetworkLayer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 70374D6B2F35FF4E252C4F7C8390DAF9 /* GMSNetworkLayer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		54C50104CCDAB9F6EBCC39BBC68D535D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		615EE5CDBC79EB508AB1499471515861 /* Pods-MarvelApp-MarvelAppUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 847D5D3A3A8ED867BB373BE4014BAA26 /* Pods-MarvelApp-MarvelAppUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		670F07B36A56A7BA5EA993F8CB351C80 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FEF0B8609AAD3E20228AA3952410DF /* ParameterEncoding.swift */; };
+		6E521E07A7A4AC75526231C0621FDEFE /* AES.swift in Sources */ = {isa = PBXBuildFile; fileRef = D117096814A0A9482D0864E5703B5E2F /* AES.swift */; };
+		7ABA8B33E1616B33EF2D0355F4228BBD /* Arcane-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A86EE729C8A3B34035FC566A0F0ACA1 /* Arcane-dummy.m */; };
 		8942B7A1C74C05AD6EDB41713C2246B9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		D2AB7FBEB9F48489C6E9D27B53E4DA1E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		DE5BCE69FCA69127C56FE8EF96C5BE6F /* Pods-MarvelApp-MarvelAppUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D76EBCA1EDCA015DC097BABA62E28C3 /* Pods-MarvelApp-MarvelAppUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F5AACED7D82453810C94A9CD6E29B35E /* Pods-MarvelAppTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 20657F96D548F5E4E3D2C1F402494BAE /* Pods-MarvelAppTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FB19E1B0A6852BCF9F8879F910AE724B /* Pods-MarvelApp-MarvelAppUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C9059B8552EB28C21460D51B0BA708 /* Pods-MarvelApp-MarvelAppUITests-dummy.m */; };
+		8B5C61481EF8378046250EB9163C4843 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D516869725D90495630FDE93EF269856 /* Data+Extensions.swift */; };
+		92F7060D14E09C278474F5601C3A30A6 /* Pods-MarvelApp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F62BC0BCC578A17023C58AF81965C67 /* Pods-MarvelApp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		97602D7DC98027D653E6F5EAC933208C /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955A973AA978F4C64BAA614638EBAD6F /* Crypto.swift */; };
+		A93C4B67824031737EA42773A977EF98 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		C43402E88EA727D0B06FCE8759104164 /* Pods-MarvelApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 300FA59F91EF767EA22C2EB4866D6385 /* Pods-MarvelApp-dummy.m */; };
+		C7BCB1CE7C42D5FFF08A990270032859 /* Arcane-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 54AFB381F0574A5129E85AE64E989DD9 /* Arcane-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DC18CD1CC0744336DB24E222F05A018B /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE90A1D0E5C5866FBCC244382DB3138 /* EndPointType.swift */; };
+		E28414FC87AC62791C21C55BFD32F186 /* Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAFF06884152D9B9DE7ABF67F7190EA /* Base64.swift */; };
+		F52DFB92293112AD9B5DFF25F6A47C06 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		F5AACED7D82453810C94A9CD6E29B35E /* Pods-MarvelAppTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 60909671C630C4E8A2C5C23FBF91948B /* Pods-MarvelAppTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F970E06674D3A810455085980EDC2CD3 /* Hash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2DFDB2183E062EB028AB5D9AE4894C /* Hash.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A0B58D8CC9C5B6CD1F2D615A6AEE4864 /* PBXContainerItemProxy */ = {
+		2FB8BD28DA46CB0A3F3483DEDB567F0B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 34A136B870B5B372CDD39D54DF86EB6F;
+			remoteInfo = Arcane;
+		};
+		4A9CFEB4964C985D8AE9B271BE2671DA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 34A136B870B5B372CDD39D54DF86EB6F;
+			remoteInfo = Arcane;
+		};
+		BC9141FA877614BA5F3CA4ACA8BC5226 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D74075CC409429B112211EEB64C5FC0B;
+			remoteInfo = GMSNetworkLayer;
+		};
+		EF2F353DD8D621CA964D09AF3C5FB269 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = E69652E367CD7E806B55C6EEACA91917;
 			remoteInfo = "Pods-MarvelApp";
 		};
+		FBFFFB753ECBDEE16728C17BDC1FBCFF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D74075CC409429B112211EEB64C5FC0B;
+			remoteInfo = GMSNetworkLayer;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		093EEA6C4F5AD6AA156E0FD507D4CC1E /* Pods-MarvelAppTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MarvelAppTests.modulemap"; sourceTree = "<group>"; };
-		0EE6D9B4EBA6B0C04F2FC5E0AE023564 /* Pods-MarvelAppTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MarvelAppTests-Info.plist"; sourceTree = "<group>"; };
-		13748310DF09E2750BBA6B5F3864D662 /* Pods-MarvelApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MarvelApp.debug.xcconfig"; sourceTree = "<group>"; };
+		00A5FB38DAE08DDA7551AD9BCE996417 /* Arcane-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Arcane-Info.plist"; sourceTree = "<group>"; };
+		070D5C614F8D05FD0D08B0F0328961B0 /* Pods-MarvelApp-MarvelAppUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MarvelApp-MarvelAppUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		13049CD7B0C41979FA9508175F4798A3 /* Pods-MarvelApp-MarvelAppUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MarvelApp-MarvelAppUITests-dummy.m"; sourceTree = "<group>"; };
+		1B93DC7F79A6163879785DB537D1A111 /* Pods-MarvelApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MarvelApp.release.xcconfig"; sourceTree = "<group>"; };
 		1D851CB7972F18938DC21E311D3CEF2A /* Pods_MarvelApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MarvelApp.framework; path = "Pods-MarvelApp.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2044CA2EF16BBB5673230D55070B93E1 /* Pods-MarvelAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MarvelAppTests.debug.xcconfig"; sourceTree = "<group>"; };
-		20657F96D548F5E4E3D2C1F402494BAE /* Pods-MarvelAppTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MarvelAppTests-umbrella.h"; sourceTree = "<group>"; };
-		284C4C71194807904CDF38D7E0530ACE /* Pods-MarvelApp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MarvelApp-acknowledgements.plist"; sourceTree = "<group>"; };
-		3D270C2078349A4E1EBDD090F8D10D4A /* Pods-MarvelApp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MarvelApp-dummy.m"; sourceTree = "<group>"; };
+		1E2DFDB2183E062EB028AB5D9AE4894C /* Hash.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Hash.swift; path = Sources/Arcane/Hash.swift; sourceTree = "<group>"; };
+		1EADB9C6713BEC647F3613413E781FC9 /* GMSNetworkLayer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GMSNetworkLayer-dummy.m"; sourceTree = "<group>"; };
+		215B27E41F4040990716F1206EB1EA1A /* Pods-MarvelApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MarvelApp.debug.xcconfig"; sourceTree = "<group>"; };
+		253E686E0121776C3EF4DE15C144BCA9 /* GMSNetworkLayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GMSNetworkLayer.debug.xcconfig; sourceTree = "<group>"; };
+		2AC6319D2F643800735C3916787A1BD6 /* Pods-MarvelAppTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MarvelAppTests-Info.plist"; sourceTree = "<group>"; };
+		300FA59F91EF767EA22C2EB4866D6385 /* Pods-MarvelApp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MarvelApp-dummy.m"; sourceTree = "<group>"; };
+		391B505F798464A11577BC65EA1E7D0B /* Pods-MarvelAppTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MarvelAppTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		41EA87BC54511A325F544C10D2804A97 /* Pods_MarvelAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MarvelAppTests.framework; path = "Pods-MarvelAppTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		698696E5A24DA42222C888003B1E2063 /* Pods-MarvelApp-MarvelAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MarvelApp-MarvelAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		4A86EE729C8A3B34035FC566A0F0ACA1 /* Arcane-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Arcane-dummy.m"; sourceTree = "<group>"; };
+		4C54074FE7A14192B18FCF94010290D6 /* Arcane.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Arcane.modulemap; sourceTree = "<group>"; };
+		4EDA902CC54B3DF5458DF0FDF10EB7EC /* Pods-MarvelApp-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MarvelApp-frameworks.sh"; sourceTree = "<group>"; };
+		546E393C810C1995558CB8BC5D8707D8 /* HTTPMethod.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTTPMethod.swift; path = NetworkLayer/HTTPMethod.swift; sourceTree = "<group>"; };
+		54AFB381F0574A5129E85AE64E989DD9 /* Arcane-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Arcane-umbrella.h"; sourceTree = "<group>"; };
+		567A5CAC69DC0D010CC3ED3A22A06C30 /* GMSNetworkLayer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GMSNetworkLayer-prefix.pch"; sourceTree = "<group>"; };
+		58291AA99694A38B5B358D32B644296D /* Pods-MarvelAppTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MarvelAppTests-dummy.m"; sourceTree = "<group>"; };
+		5D2F05260EF403C0B1E3F52C5DAA99BD /* Pods-MarvelApp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MarvelApp.modulemap"; sourceTree = "<group>"; };
+		60909671C630C4E8A2C5C23FBF91948B /* Pods-MarvelAppTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MarvelAppTests-umbrella.h"; sourceTree = "<group>"; };
+		630CAF7181EB996F0EC2C13C5D174D02 /* Pods-MarvelApp-MarvelAppUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MarvelApp-MarvelAppUITests-frameworks.sh"; sourceTree = "<group>"; };
+		649689EDBAA02EE1DB0D64DD67A59212 /* HMAC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HMAC.swift; path = Sources/Arcane/HMAC.swift; sourceTree = "<group>"; };
+		678E225D55320ADB6A463460170F40DB /* Pods-MarvelAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MarvelAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		70374D6B2F35FF4E252C4F7C8390DAF9 /* GMSNetworkLayer-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GMSNetworkLayer-umbrella.h"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		74BE06DB492FADCD390B4128522A1B19 /* Pods-MarvelAppTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MarvelAppTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		7E741576E3B1DCB41EED049925312ECD /* Pods-MarvelApp-MarvelAppUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MarvelApp-MarvelAppUITests-acknowledgements.plist"; sourceTree = "<group>"; };
-		84C9059B8552EB28C21460D51B0BA708 /* Pods-MarvelApp-MarvelAppUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MarvelApp-MarvelAppUITests-dummy.m"; sourceTree = "<group>"; };
-		8D76EBCA1EDCA015DC097BABA62E28C3 /* Pods-MarvelApp-MarvelAppUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MarvelApp-MarvelAppUITests-umbrella.h"; sourceTree = "<group>"; };
-		93375613D99DF18A9366115B3414D99B /* Pods-MarvelApp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MarvelApp.modulemap"; sourceTree = "<group>"; };
+		7BB0F25DCFAD3F95F1B7F53B08F1536C /* Pods-MarvelAppTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MarvelAppTests.modulemap"; sourceTree = "<group>"; };
+		822434F4D8A8924EF75F85B8D185CA53 /* Pods-MarvelAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MarvelAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		847D5D3A3A8ED867BB373BE4014BAA26 /* Pods-MarvelApp-MarvelAppUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MarvelApp-MarvelAppUITests-umbrella.h"; sourceTree = "<group>"; };
+		86530D303EEDE4739F428302E1302C18 /* Pods-MarvelApp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MarvelApp-acknowledgements.markdown"; sourceTree = "<group>"; };
+		89254ABB6D21BE370A800B278516E419 /* Pods-MarvelApp-MarvelAppUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MarvelApp-MarvelAppUITests.modulemap"; sourceTree = "<group>"; };
+		8EAFF06884152D9B9DE7ABF67F7190EA /* Base64.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Base64.swift; path = Sources/Arcane/Base64.swift; sourceTree = "<group>"; };
+		8F62BC0BCC578A17023C58AF81965C67 /* Pods-MarvelApp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MarvelApp-umbrella.h"; sourceTree = "<group>"; };
+		90457D61C95F67060B46BA392F8A22DA /* NetworkManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkManager.swift; path = NetworkLayer/NetworkManager.swift; sourceTree = "<group>"; };
+		955A973AA978F4C64BAA614638EBAD6F /* Crypto.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Crypto.swift; path = Sources/Arcane/Crypto.swift; sourceTree = "<group>"; };
+		962B51DA8B295EB2347DDA5EC417F8B4 /* Pods-MarvelAppTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MarvelAppTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		AF05D2B606ABB1B07C6EA52793D06847 /* Pods-MarvelAppTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MarvelAppTests-dummy.m"; sourceTree = "<group>"; };
-		C43107F9738DDEEDF592AE50F297B0AE /* Pods-MarvelAppTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MarvelAppTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		CBB26CE318E1D49220955A83729E4A05 /* Pods-MarvelAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MarvelAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		9FD6083D486F264562E96C33F962A31E /* Arcane-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Arcane-prefix.pch"; sourceTree = "<group>"; };
+		A0088B811377A5D775BE2ECDD0A4B97F /* Pods-MarvelApp-MarvelAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MarvelApp-MarvelAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		AB4CAC59C0D2625532B406C5C170CD9D /* Pods-MarvelApp-MarvelAppUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MarvelApp-MarvelAppUITests-Info.plist"; sourceTree = "<group>"; };
+		B0C01D0909F9860C0CF5E9CE1BC08A93 /* GMSNetworkLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GMSNetworkLayer.framework; path = GMSNetworkLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB252F6E2B9E9B80C252D4767FC00921 /* GMSNetworkLayer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = GMSNetworkLayer.modulemap; sourceTree = "<group>"; };
+		CCFCF76D1ED795F4E69096D3066FD5AE /* Arcane.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Arcane.release.xcconfig; sourceTree = "<group>"; };
 		D03EF2D43DCAC2ACB3A1A2ABF945D7A2 /* Pods_MarvelApp_MarvelAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MarvelApp_MarvelAppUITests.framework; path = "Pods-MarvelApp-MarvelAppUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D0B5FDF805856051E18E5608702B2B52 /* Pods-MarvelApp-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MarvelApp-Info.plist"; sourceTree = "<group>"; };
-		D305E85A9F66D62A8824153C0E80D93C /* Pods-MarvelApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MarvelApp.release.xcconfig"; sourceTree = "<group>"; };
-		E3746769A3C6949A3838D9E2729F2B79 /* Pods-MarvelApp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MarvelApp-acknowledgements.markdown"; sourceTree = "<group>"; };
-		E4B9858FB032E7BE161B6891B152D7B5 /* Pods-MarvelApp-MarvelAppUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MarvelApp-MarvelAppUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		EC486FEC19DC434CCDD9B8D9ADCE0B47 /* Pods-MarvelApp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MarvelApp-umbrella.h"; sourceTree = "<group>"; };
-		F1A1FA21E9B5F4770255BE00FE8AA5A4 /* Pods-MarvelApp-MarvelAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MarvelApp-MarvelAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		FA8DAE092C6F31FEE839A6CFCEE80D03 /* Pods-MarvelApp-MarvelAppUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MarvelApp-MarvelAppUITests.modulemap"; sourceTree = "<group>"; };
-		FBA7169D1D944ED66EE0B52AD8B081F3 /* Pods-MarvelApp-MarvelAppUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MarvelApp-MarvelAppUITests-Info.plist"; sourceTree = "<group>"; };
+		D117096814A0A9482D0864E5703B5E2F /* AES.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AES.swift; path = Sources/Arcane/AES.swift; sourceTree = "<group>"; };
+		D17DF3EB61CD3644359BCCF487CC5D5C /* Arcane.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Arcane.framework; path = Arcane.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3623A022849A38F75852ED655ABBF11 /* NetworkResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkResponse.swift; path = NetworkLayer/NetworkResponse.swift; sourceTree = "<group>"; };
+		D3EE9C0ADF8CCA8EF7FD48034ACD171C /* Pods-MarvelApp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MarvelApp-acknowledgements.plist"; sourceTree = "<group>"; };
+		D516869725D90495630FDE93EF269856 /* Data+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Data+Extensions.swift"; path = "Sources/Arcane/Data+Extensions.swift"; sourceTree = "<group>"; };
+		DBDAC40177B3154F758CD17ED7AEA488 /* Arcane.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Arcane.debug.xcconfig; sourceTree = "<group>"; };
+		DEE90A1D0E5C5866FBCC244382DB3138 /* EndPointType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EndPointType.swift; path = NetworkLayer/EndPointType.swift; sourceTree = "<group>"; };
+		E0716AFC6944D83E88EF71B616D502CA /* GMSNetworkLayer-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "GMSNetworkLayer-Info.plist"; sourceTree = "<group>"; };
+		E1F0C913B70E42D37E5C2100153D15B8 /* GMSNetworkLayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GMSNetworkLayer.release.xcconfig; sourceTree = "<group>"; };
+		E29B0B0485E6D2907984ABC64AE7CEDA /* Pods-MarvelApp-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MarvelApp-Info.plist"; sourceTree = "<group>"; };
+		EC08DAEFF697AAC8A0493B835CDE4AD0 /* Pods-MarvelApp-MarvelAppUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MarvelApp-MarvelAppUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		F6FEF0B8609AAD3E20228AA3952410DF /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = NetworkLayer/ParameterEncoding.swift; sourceTree = "<group>"; };
+		F9F733466775A257D26BBAFA6E919B71 /* Pods-MarvelApp-MarvelAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MarvelApp-MarvelAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3DE43540EED53811503536B0D8740EAF /* Frameworks */ = {
+		4E11D92B4812D911F8219DB446822B78 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2AB7FBEB9F48489C6E9D27B53E4DA1E /* Foundation.framework in Frameworks */,
+				3DC7B990FFAE128996B5D98826CD9015 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E19E23AA429E1E1032106C6A7F80BD4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A93C4B67824031737EA42773A977EF98 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B9FA5D3B716BFC28C849FBA7133ADD9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F52DFB92293112AD9B5DFF25F6A47C06 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,83 +167,70 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CD07E5F954E7DA94AF2B7C21C9C76C38 /* Frameworks */ = {
+		F70B8AA52B086023DF2CF750486B2837 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3FA931727C6E7836003F08A12A5A5842 /* Foundation.framework in Frameworks */,
+				54C50104CCDAB9F6EBCC39BBC68D535D /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		06E4D4402C3C3272AE7F0E0E454DA3FB /* Targets Support Files */ = {
+		084DB72B93A3F7C1E50FD868F9767B4D /* Pods-MarvelAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				208D4937E754B300B73BF682BAA2F9A8 /* Pods-MarvelApp */,
-				4D568B29307EF229DEE95C1E16504872 /* Pods-MarvelApp-MarvelAppUITests */,
-				1BEA8D1646D9A76662B4A728BFCBA887 /* Pods-MarvelAppTests */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		1BEA8D1646D9A76662B4A728BFCBA887 /* Pods-MarvelAppTests */ = {
-			isa = PBXGroup;
-			children = (
-				093EEA6C4F5AD6AA156E0FD507D4CC1E /* Pods-MarvelAppTests.modulemap */,
-				C43107F9738DDEEDF592AE50F297B0AE /* Pods-MarvelAppTests-acknowledgements.markdown */,
-				74BE06DB492FADCD390B4128522A1B19 /* Pods-MarvelAppTests-acknowledgements.plist */,
-				AF05D2B606ABB1B07C6EA52793D06847 /* Pods-MarvelAppTests-dummy.m */,
-				0EE6D9B4EBA6B0C04F2FC5E0AE023564 /* Pods-MarvelAppTests-Info.plist */,
-				20657F96D548F5E4E3D2C1F402494BAE /* Pods-MarvelAppTests-umbrella.h */,
-				2044CA2EF16BBB5673230D55070B93E1 /* Pods-MarvelAppTests.debug.xcconfig */,
-				CBB26CE318E1D49220955A83729E4A05 /* Pods-MarvelAppTests.release.xcconfig */,
+				7BB0F25DCFAD3F95F1B7F53B08F1536C /* Pods-MarvelAppTests.modulemap */,
+				391B505F798464A11577BC65EA1E7D0B /* Pods-MarvelAppTests-acknowledgements.markdown */,
+				962B51DA8B295EB2347DDA5EC417F8B4 /* Pods-MarvelAppTests-acknowledgements.plist */,
+				58291AA99694A38B5B358D32B644296D /* Pods-MarvelAppTests-dummy.m */,
+				2AC6319D2F643800735C3916787A1BD6 /* Pods-MarvelAppTests-Info.plist */,
+				60909671C630C4E8A2C5C23FBF91948B /* Pods-MarvelAppTests-umbrella.h */,
+				678E225D55320ADB6A463460170F40DB /* Pods-MarvelAppTests.debug.xcconfig */,
+				822434F4D8A8924EF75F85B8D185CA53 /* Pods-MarvelAppTests.release.xcconfig */,
 			);
 			name = "Pods-MarvelAppTests";
 			path = "Target Support Files/Pods-MarvelAppTests";
 			sourceTree = "<group>";
 		};
-		1ED096DC338AFB4A6652E4E1CC792E6A /* Products */ = {
+		0AF5F9BF967A676DEC4A62BD241632E3 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				1D851CB7972F18938DC21E311D3CEF2A /* Pods_MarvelApp.framework */,
-				D03EF2D43DCAC2ACB3A1A2ABF945D7A2 /* Pods_MarvelApp_MarvelAppUITests.framework */,
-				41EA87BC54511A325F544C10D2804A97 /* Pods_MarvelAppTests.framework */,
+				4C54074FE7A14192B18FCF94010290D6 /* Arcane.modulemap */,
+				4A86EE729C8A3B34035FC566A0F0ACA1 /* Arcane-dummy.m */,
+				00A5FB38DAE08DDA7551AD9BCE996417 /* Arcane-Info.plist */,
+				9FD6083D486F264562E96C33F962A31E /* Arcane-prefix.pch */,
+				54AFB381F0574A5129E85AE64E989DD9 /* Arcane-umbrella.h */,
+				DBDAC40177B3154F758CD17ED7AEA488 /* Arcane.debug.xcconfig */,
+				CCFCF76D1ED795F4E69096D3066FD5AE /* Arcane.release.xcconfig */,
 			);
-			name = Products;
+			name = "Support Files";
+			path = "../Target Support Files/Arcane";
 			sourceTree = "<group>";
 		};
-		208D4937E754B300B73BF682BAA2F9A8 /* Pods-MarvelApp */ = {
+		37425CC5C3AEBA6F5360C42ACE48B131 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				93375613D99DF18A9366115B3414D99B /* Pods-MarvelApp.modulemap */,
-				E3746769A3C6949A3838D9E2729F2B79 /* Pods-MarvelApp-acknowledgements.markdown */,
-				284C4C71194807904CDF38D7E0530ACE /* Pods-MarvelApp-acknowledgements.plist */,
-				3D270C2078349A4E1EBDD090F8D10D4A /* Pods-MarvelApp-dummy.m */,
-				D0B5FDF805856051E18E5608702B2B52 /* Pods-MarvelApp-Info.plist */,
-				EC486FEC19DC434CCDD9B8D9ADCE0B47 /* Pods-MarvelApp-umbrella.h */,
-				13748310DF09E2750BBA6B5F3864D662 /* Pods-MarvelApp.debug.xcconfig */,
-				D305E85A9F66D62A8824153C0E80D93C /* Pods-MarvelApp.release.xcconfig */,
+				48982B0A2FEFF65278B8B93439B0DE9B /* Arcane */,
+				99222D035A77DD57F2F5B3349406A261 /* GMSNetworkLayer */,
 			);
-			name = "Pods-MarvelApp";
-			path = "Target Support Files/Pods-MarvelApp";
+			name = Pods;
 			sourceTree = "<group>";
 		};
-		4D568B29307EF229DEE95C1E16504872 /* Pods-MarvelApp-MarvelAppUITests */ = {
+		48982B0A2FEFF65278B8B93439B0DE9B /* Arcane */ = {
 			isa = PBXGroup;
 			children = (
-				FA8DAE092C6F31FEE839A6CFCEE80D03 /* Pods-MarvelApp-MarvelAppUITests.modulemap */,
-				E4B9858FB032E7BE161B6891B152D7B5 /* Pods-MarvelApp-MarvelAppUITests-acknowledgements.markdown */,
-				7E741576E3B1DCB41EED049925312ECD /* Pods-MarvelApp-MarvelAppUITests-acknowledgements.plist */,
-				84C9059B8552EB28C21460D51B0BA708 /* Pods-MarvelApp-MarvelAppUITests-dummy.m */,
-				FBA7169D1D944ED66EE0B52AD8B081F3 /* Pods-MarvelApp-MarvelAppUITests-Info.plist */,
-				8D76EBCA1EDCA015DC097BABA62E28C3 /* Pods-MarvelApp-MarvelAppUITests-umbrella.h */,
-				F1A1FA21E9B5F4770255BE00FE8AA5A4 /* Pods-MarvelApp-MarvelAppUITests.debug.xcconfig */,
-				698696E5A24DA42222C888003B1E2063 /* Pods-MarvelApp-MarvelAppUITests.release.xcconfig */,
+				D117096814A0A9482D0864E5703B5E2F /* AES.swift */,
+				8EAFF06884152D9B9DE7ABF67F7190EA /* Base64.swift */,
+				955A973AA978F4C64BAA614638EBAD6F /* Crypto.swift */,
+				D516869725D90495630FDE93EF269856 /* Data+Extensions.swift */,
+				1E2DFDB2183E062EB028AB5D9AE4894C /* Hash.swift */,
+				649689EDBAA02EE1DB0D64DD67A59212 /* HMAC.swift */,
+				0AF5F9BF967A676DEC4A62BD241632E3 /* Support Files */,
 			);
-			name = "Pods-MarvelApp-MarvelAppUITests";
-			path = "Target Support Files/Pods-MarvelApp-MarvelAppUITests";
+			name = Arcane;
+			path = Arcane;
 			sourceTree = "<group>";
 		};
 		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
@@ -164,14 +241,75 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		99222D035A77DD57F2F5B3349406A261 /* GMSNetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				DEE90A1D0E5C5866FBCC244382DB3138 /* EndPointType.swift */,
+				546E393C810C1995558CB8BC5D8707D8 /* HTTPMethod.swift */,
+				90457D61C95F67060B46BA392F8A22DA /* NetworkManager.swift */,
+				D3623A022849A38F75852ED655ABBF11 /* NetworkResponse.swift */,
+				F6FEF0B8609AAD3E20228AA3952410DF /* ParameterEncoding.swift */,
+				FD681971D5D6B6321F7DBF16318483A4 /* Support Files */,
+			);
+			name = GMSNetworkLayer;
+			path = GMSNetworkLayer;
+			sourceTree = "<group>";
+		};
+		BCD7FFC321F473F8FB243F91B0C83971 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D17DF3EB61CD3644359BCCF487CC5D5C /* Arcane.framework */,
+				B0C01D0909F9860C0CF5E9CE1BC08A93 /* GMSNetworkLayer.framework */,
+				1D851CB7972F18938DC21E311D3CEF2A /* Pods_MarvelApp.framework */,
+				D03EF2D43DCAC2ACB3A1A2ABF945D7A2 /* Pods_MarvelApp_MarvelAppUITests.framework */,
+				41EA87BC54511A325F544C10D2804A97 /* Pods_MarvelAppTests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				1ED096DC338AFB4A6652E4E1CC792E6A /* Products */,
-				06E4D4402C3C3272AE7F0E0E454DA3FB /* Targets Support Files */,
+				37425CC5C3AEBA6F5360C42ACE48B131 /* Pods */,
+				BCD7FFC321F473F8FB243F91B0C83971 /* Products */,
+				EB06E3C3BC81A745FF7D061FF5BD6DE8 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		CFC698A554B0F94263CC22047B0637D1 /* Pods-MarvelApp-MarvelAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				89254ABB6D21BE370A800B278516E419 /* Pods-MarvelApp-MarvelAppUITests.modulemap */,
+				EC08DAEFF697AAC8A0493B835CDE4AD0 /* Pods-MarvelApp-MarvelAppUITests-acknowledgements.markdown */,
+				070D5C614F8D05FD0D08B0F0328961B0 /* Pods-MarvelApp-MarvelAppUITests-acknowledgements.plist */,
+				13049CD7B0C41979FA9508175F4798A3 /* Pods-MarvelApp-MarvelAppUITests-dummy.m */,
+				630CAF7181EB996F0EC2C13C5D174D02 /* Pods-MarvelApp-MarvelAppUITests-frameworks.sh */,
+				AB4CAC59C0D2625532B406C5C170CD9D /* Pods-MarvelApp-MarvelAppUITests-Info.plist */,
+				847D5D3A3A8ED867BB373BE4014BAA26 /* Pods-MarvelApp-MarvelAppUITests-umbrella.h */,
+				F9F733466775A257D26BBAFA6E919B71 /* Pods-MarvelApp-MarvelAppUITests.debug.xcconfig */,
+				A0088B811377A5D775BE2ECDD0A4B97F /* Pods-MarvelApp-MarvelAppUITests.release.xcconfig */,
+			);
+			name = "Pods-MarvelApp-MarvelAppUITests";
+			path = "Target Support Files/Pods-MarvelApp-MarvelAppUITests";
+			sourceTree = "<group>";
+		};
+		D08BF638A0C88A1036F5DBBDF079B7F2 /* Pods-MarvelApp */ = {
+			isa = PBXGroup;
+			children = (
+				5D2F05260EF403C0B1E3F52C5DAA99BD /* Pods-MarvelApp.modulemap */,
+				86530D303EEDE4739F428302E1302C18 /* Pods-MarvelApp-acknowledgements.markdown */,
+				D3EE9C0ADF8CCA8EF7FD48034ACD171C /* Pods-MarvelApp-acknowledgements.plist */,
+				300FA59F91EF767EA22C2EB4866D6385 /* Pods-MarvelApp-dummy.m */,
+				4EDA902CC54B3DF5458DF0FDF10EB7EC /* Pods-MarvelApp-frameworks.sh */,
+				E29B0B0485E6D2907984ABC64AE7CEDA /* Pods-MarvelApp-Info.plist */,
+				8F62BC0BCC578A17023C58AF81965C67 /* Pods-MarvelApp-umbrella.h */,
+				215B27E41F4040990716F1206EB1EA1A /* Pods-MarvelApp.debug.xcconfig */,
+				1B93DC7F79A6163879785DB537D1A111 /* Pods-MarvelApp.release.xcconfig */,
+			);
+			name = "Pods-MarvelApp";
+			path = "Target Support Files/Pods-MarvelApp";
 			sourceTree = "<group>";
 		};
 		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
@@ -182,14 +320,55 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EB06E3C3BC81A745FF7D061FF5BD6DE8 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D08BF638A0C88A1036F5DBBDF079B7F2 /* Pods-MarvelApp */,
+				CFC698A554B0F94263CC22047B0637D1 /* Pods-MarvelApp-MarvelAppUITests */,
+				084DB72B93A3F7C1E50FD868F9767B4D /* Pods-MarvelAppTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		FD681971D5D6B6321F7DBF16318483A4 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				BB252F6E2B9E9B80C252D4767FC00921 /* GMSNetworkLayer.modulemap */,
+				1EADB9C6713BEC647F3613413E781FC9 /* GMSNetworkLayer-dummy.m */,
+				E0716AFC6944D83E88EF71B616D502CA /* GMSNetworkLayer-Info.plist */,
+				567A5CAC69DC0D010CC3ED3A22A06C30 /* GMSNetworkLayer-prefix.pch */,
+				70374D6B2F35FF4E252C4F7C8390DAF9 /* GMSNetworkLayer-umbrella.h */,
+				253E686E0121776C3EF4DE15C144BCA9 /* GMSNetworkLayer.debug.xcconfig */,
+				E1F0C913B70E42D37E5C2100153D15B8 /* GMSNetworkLayer.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/GMSNetworkLayer";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		27F1087B5C5BDAF46B327ABC3F81DD56 /* Headers */ = {
+		15C4881357D19881329E4BEB1454F09C /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3332A59F9FF4B2F4FA63B6B9C13A90D5 /* Pods-MarvelApp-umbrella.h in Headers */,
+				3FD1EC0933BB03C53F2FD5809B849486 /* GMSNetworkLayer-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E6CEA42A45D66D96BD82B3AB6D68E8C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				615EE5CDBC79EB508AB1499471515861 /* Pods-MarvelApp-MarvelAppUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41CCF03C2F92DABC55D460C6FB25A849 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7BCB1CE7C42D5FFF08A990270032859 /* Arcane-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,11 +380,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D9AD95B34D0494CFD1C1DFD5BDECBE55 /* Headers */ = {
+		DA7DFD1DEF78B7BCA795A7586E5CF825 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE5BCE69FCA69127C56FE8EF96C5BE6F /* Pods-MarvelApp-MarvelAppUITests-umbrella.h in Headers */,
+				92F7060D14E09C278474F5601C3A30A6 /* Pods-MarvelApp-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,43 +403,83 @@
 			buildRules = (
 			);
 			dependencies = (
-				E99B4E3D6B177824CC4697A17E009D83 /* PBXTargetDependency */,
+				D87642CEF92B1799E2CB4B2EB775561C /* PBXTargetDependency */,
 			);
 			name = "Pods-MarvelAppTests";
 			productName = "Pods-MarvelAppTests";
 			productReference = 41EA87BC54511A325F544C10D2804A97 /* Pods_MarvelAppTests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		C29AE7EFC8473F4BCB0C7A64D08AE921 /* Pods-MarvelApp-MarvelAppUITests */ = {
+		34A136B870B5B372CDD39D54DF86EB6F /* Arcane */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 87216700452FF68FA397EEEB0ADC45AA /* Build configuration list for PBXNativeTarget "Pods-MarvelApp-MarvelAppUITests" */;
+			buildConfigurationList = F7C362A41075A0B1B58A6F7E3D7C9E62 /* Build configuration list for PBXNativeTarget "Arcane" */;
 			buildPhases = (
-				D9AD95B34D0494CFD1C1DFD5BDECBE55 /* Headers */,
-				ECBAE942F8B1D070A2416CDA0FD984EC /* Sources */,
-				CD07E5F954E7DA94AF2B7C21C9C76C38 /* Frameworks */,
-				73FAFD46DDA55A74465FC638E141A135 /* Resources */,
+				41CCF03C2F92DABC55D460C6FB25A849 /* Headers */,
+				3A6D8EC7F44A6A26642D1B303BC10783 /* Sources */,
+				5B9FA5D3B716BFC28C849FBA7133ADD9 /* Frameworks */,
+				3874635C2EEED60CD29EF5792528A7DC /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+			);
+			name = Arcane;
+			productName = Arcane;
+			productReference = D17DF3EB61CD3644359BCCF487CC5D5C /* Arcane.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C29AE7EFC8473F4BCB0C7A64D08AE921 /* Pods-MarvelApp-MarvelAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6BAF39E6A378215809E1890FC21BC500 /* Build configuration list for PBXNativeTarget "Pods-MarvelApp-MarvelAppUITests" */;
+			buildPhases = (
+				2E6CEA42A45D66D96BD82B3AB6D68E8C /* Headers */,
+				6A1CBBFA2369F5BCA998DD4BA81545AA /* Sources */,
+				4E11D92B4812D911F8219DB446822B78 /* Frameworks */,
+				7D7FCB0177594357D62E40ADD025B3DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				36BB29ED1E94D65E92EABDEF18AA87CE /* PBXTargetDependency */,
+				B36E73C6E2EE7A9AD4483377EB348B2D /* PBXTargetDependency */,
 			);
 			name = "Pods-MarvelApp-MarvelAppUITests";
 			productName = "Pods-MarvelApp-MarvelAppUITests";
 			productReference = D03EF2D43DCAC2ACB3A1A2ABF945D7A2 /* Pods_MarvelApp_MarvelAppUITests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		E69652E367CD7E806B55C6EEACA91917 /* Pods-MarvelApp */ = {
+		D74075CC409429B112211EEB64C5FC0B /* GMSNetworkLayer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A76CF8499F062136F936DFD2A882561C /* Build configuration list for PBXNativeTarget "Pods-MarvelApp" */;
+			buildConfigurationList = 96ECCCC6F0EBF49F0D8CCE0126556504 /* Build configuration list for PBXNativeTarget "GMSNetworkLayer" */;
 			buildPhases = (
-				27F1087B5C5BDAF46B327ABC3F81DD56 /* Headers */,
-				01BF7AB24011895F5C21B6ED5CE2CFB8 /* Sources */,
-				3DE43540EED53811503536B0D8740EAF /* Frameworks */,
-				10F6374F2DD6BCE44FEDF47824A86066 /* Resources */,
+				15C4881357D19881329E4BEB1454F09C /* Headers */,
+				2776522A1C54E2433D3FF62CC873C858 /* Sources */,
+				4E19E23AA429E1E1032106C6A7F80BD4 /* Frameworks */,
+				E3F05A3092DACE786415536E8FFB407E /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+			);
+			name = GMSNetworkLayer;
+			productName = GMSNetworkLayer;
+			productReference = B0C01D0909F9860C0CF5E9CE1BC08A93 /* GMSNetworkLayer.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E69652E367CD7E806B55C6EEACA91917 /* Pods-MarvelApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5DBA57A5F0A0734FFB4AEB92EC599887 /* Build configuration list for PBXNativeTarget "Pods-MarvelApp" */;
+			buildPhases = (
+				DA7DFD1DEF78B7BCA795A7586E5CF825 /* Headers */,
+				C2AB5D548D982F6619B70241106B46E2 /* Sources */,
+				F70B8AA52B086023DF2CF750486B2837 /* Frameworks */,
+				10B9134D50AC6BE782990C7DF76E3977 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D56F2D134729206B8E0B0CE1481E50BA /* PBXTargetDependency */,
+				22331B5B14C85C0B26904E4F5DA0D37F /* PBXTargetDependency */,
 			);
 			name = "Pods-MarvelApp";
 			productName = "Pods-MarvelApp";
@@ -277,7 +496,7 @@
 				LastUpgradeCheck = 1240;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -285,10 +504,12 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 1ED096DC338AFB4A6652E4E1CC792E6A /* Products */;
+			productRefGroup = BCD7FFC321F473F8FB243F91B0C83971 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				34A136B870B5B372CDD39D54DF86EB6F /* Arcane */,
+				D74075CC409429B112211EEB64C5FC0B /* GMSNetworkLayer */,
 				E69652E367CD7E806B55C6EEACA91917 /* Pods-MarvelApp */,
 				C29AE7EFC8473F4BCB0C7A64D08AE921 /* Pods-MarvelApp-MarvelAppUITests */,
 				18A5D976109429295730F0E2B7C6B78C /* Pods-MarvelAppTests */,
@@ -297,7 +518,14 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		10F6374F2DD6BCE44FEDF47824A86066 /* Resources */ = {
+		10B9134D50AC6BE782990C7DF76E3977 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3874635C2EEED60CD29EF5792528A7DC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -311,7 +539,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		73FAFD46DDA55A74465FC638E141A135 /* Resources */ = {
+		7D7FCB0177594357D62E40ADD025B3DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3F05A3092DACE786415536E8FFB407E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -321,14 +556,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		01BF7AB24011895F5C21B6ED5CE2CFB8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				87A6F907B277F5A3309CACB1ED804A33 /* Pods-MarvelApp-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		1DD1BA2EE2EAE19D5D593F9ECCC49986 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -337,29 +564,123 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		ECBAE942F8B1D070A2416CDA0FD984EC /* Sources */ = {
+		2776522A1C54E2433D3FF62CC873C858 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB19E1B0A6852BCF9F8879F910AE724B /* Pods-MarvelApp-MarvelAppUITests-dummy.m in Sources */,
+				DC18CD1CC0744336DB24E222F05A018B /* EndPointType.swift in Sources */,
+				154486AF90F86D2C688BD11634484E74 /* GMSNetworkLayer-dummy.m in Sources */,
+				3A64EFD64F5A6A85B63312273502CB09 /* HTTPMethod.swift in Sources */,
+				19EBC81B4C633E4A59901ADA169B8012 /* NetworkManager.swift in Sources */,
+				203596223F7D1F50F7F2C30A75CB35E2 /* NetworkResponse.swift in Sources */,
+				670F07B36A56A7BA5EA993F8CB351C80 /* ParameterEncoding.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A6D8EC7F44A6A26642D1B303BC10783 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E521E07A7A4AC75526231C0621FDEFE /* AES.swift in Sources */,
+				7ABA8B33E1616B33EF2D0355F4228BBD /* Arcane-dummy.m in Sources */,
+				E28414FC87AC62791C21C55BFD32F186 /* Base64.swift in Sources */,
+				97602D7DC98027D653E6F5EAC933208C /* Crypto.swift in Sources */,
+				8B5C61481EF8378046250EB9163C4843 /* Data+Extensions.swift in Sources */,
+				F970E06674D3A810455085980EDC2CD3 /* Hash.swift in Sources */,
+				09F23DB6C787E6F632336A624B8C0CD3 /* HMAC.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A1CBBFA2369F5BCA998DD4BA81545AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38E2967AA28847BF2DC9178E7E50A5CC /* Pods-MarvelApp-MarvelAppUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2AB5D548D982F6619B70241106B46E2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C43402E88EA727D0B06FCE8759104164 /* Pods-MarvelApp-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		E99B4E3D6B177824CC4697A17E009D83 /* PBXTargetDependency */ = {
+		22331B5B14C85C0B26904E4F5DA0D37F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GMSNetworkLayer;
+			target = D74075CC409429B112211EEB64C5FC0B /* GMSNetworkLayer */;
+			targetProxy = BC9141FA877614BA5F3CA4ACA8BC5226 /* PBXContainerItemProxy */;
+		};
+		36BB29ED1E94D65E92EABDEF18AA87CE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Arcane;
+			target = 34A136B870B5B372CDD39D54DF86EB6F /* Arcane */;
+			targetProxy = 4A9CFEB4964C985D8AE9B271BE2671DA /* PBXContainerItemProxy */;
+		};
+		B36E73C6E2EE7A9AD4483377EB348B2D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GMSNetworkLayer;
+			target = D74075CC409429B112211EEB64C5FC0B /* GMSNetworkLayer */;
+			targetProxy = FBFFFB753ECBDEE16728C17BDC1FBCFF /* PBXContainerItemProxy */;
+		};
+		D56F2D134729206B8E0B0CE1481E50BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Arcane;
+			target = 34A136B870B5B372CDD39D54DF86EB6F /* Arcane */;
+			targetProxy = 2FB8BD28DA46CB0A3F3483DEDB567F0B /* PBXContainerItemProxy */;
+		};
+		D87642CEF92B1799E2CB4B2EB775561C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-MarvelApp";
 			target = E69652E367CD7E806B55C6EEACA91917 /* Pods-MarvelApp */;
-			targetProxy = A0B58D8CC9C5B6CD1F2D615A6AEE4864 /* PBXContainerItemProxy */;
+			targetProxy = EF2F353DD8D621CA964D09AF3C5FB269 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0679815DE417996EF561DDC24F428C20 /* Release */ = {
+		046DC4CCB5D89A40EF394E4F338A1DC2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D305E85A9F66D62A8824153C0E80D93C /* Pods-MarvelApp.release.xcconfig */;
+			baseConfigurationReference = CCFCF76D1ED795F4E69096D3066FD5AE /* Arcane.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Arcane/Arcane-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Arcane/Arcane-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Arcane/Arcane.modulemap";
+				PRODUCT_MODULE_NAME = Arcane;
+				PRODUCT_NAME = Arcane;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		0E1CF450A5AB2D5F06C6CE3D8C6AC292 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0088B811377A5D775BE2ECDD0A4B97F /* Pods-MarvelApp-MarvelAppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -371,7 +692,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-MarvelApp/Pods-MarvelApp-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-MarvelApp-MarvelAppUITests/Pods-MarvelApp-MarvelAppUITests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -380,7 +701,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-MarvelApp/Pods-MarvelApp.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-MarvelApp-MarvelAppUITests/Pods-MarvelApp-MarvelAppUITests.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -395,9 +716,9 @@
 			};
 			name = Release;
 		};
-		607632723EC8EBCE58AEC90BD23EA4A5 /* Debug */ = {
+		10A5C621FF68001B8A3CB8D361F1389B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 13748310DF09E2750BBA6B5F3864D662 /* Pods-MarvelApp.debug.xcconfig */;
+			baseConfigurationReference = 215B27E41F4040990716F1206EB1EA1A /* Pods-MarvelApp.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -432,9 +753,78 @@
 			};
 			name = Debug;
 		};
+		47EB510B0D713424378523B84FE69E7D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 253E686E0121776C3EF4DE15C144BCA9 /* GMSNetworkLayer.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/GMSNetworkLayer/GMSNetworkLayer-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/GMSNetworkLayer/GMSNetworkLayer-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/GMSNetworkLayer/GMSNetworkLayer.modulemap";
+				PRODUCT_MODULE_NAME = GMSNetworkLayer;
+				PRODUCT_NAME = GMSNetworkLayer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		495413C60ABBEADC6E8612F46ABACBDC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DBDAC40177B3154F758CD17ED7AEA488 /* Arcane.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Arcane/Arcane-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Arcane/Arcane-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Arcane/Arcane.modulemap";
+				PRODUCT_MODULE_NAME = Arcane;
+				PRODUCT_NAME = Arcane;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		6F54E3A66F8F400D1A6ECBDD7EE6032C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2044CA2EF16BBB5673230D55070B93E1 /* Pods-MarvelAppTests.debug.xcconfig */;
+			baseConfigurationReference = 678E225D55320ADB6A463460170F40DB /* Pods-MarvelAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -469,9 +859,9 @@
 			};
 			name = Debug;
 		};
-		71576AD841F9E4F16EB54EE6D11F40C1 /* Debug */ = {
+		83DD45BB6E3281F057F4C20EA0C2B19D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F1A1FA21E9B5F4770255BE00FE8AA5A4 /* Pods-MarvelApp-MarvelAppUITests.debug.xcconfig */;
+			baseConfigurationReference = 1B93DC7F79A6163879785DB537D1A111 /* Pods-MarvelApp.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -483,7 +873,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-MarvelApp-MarvelAppUITests/Pods-MarvelApp-MarvelAppUITests-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-MarvelApp/Pods-MarvelApp-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -492,44 +882,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-MarvelApp-MarvelAppUITests/Pods-MarvelApp-MarvelAppUITests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		A4D14CDACD0910EA1D74818A1B3D5DF5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 698696E5A24DA42222C888003B1E2063 /* Pods-MarvelApp-MarvelAppUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-MarvelApp-MarvelAppUITests/Pods-MarvelApp-MarvelAppUITests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-MarvelApp-MarvelAppUITests/Pods-MarvelApp-MarvelAppUITests.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-MarvelApp/Pods-MarvelApp.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -546,7 +899,7 @@
 		};
 		AB686E0B37B3137C58569BE8DA46F5F3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CBB26CE318E1D49220955A83729E4A05 /* Pods-MarvelAppTests.release.xcconfig */;
+			baseConfigurationReference = 822434F4D8A8924EF75F85B8D185CA53 /* Pods-MarvelAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -575,6 +928,42 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BB2CD88B861DC4A796FADD217AD9084F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E1F0C913B70E42D37E5C2100153D15B8 /* GMSNetworkLayer.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/GMSNetworkLayer/GMSNetworkLayer-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/GMSNetworkLayer/GMSNetworkLayer-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/GMSNetworkLayer/GMSNetworkLayer.modulemap";
+				PRODUCT_MODULE_NAME = GMSNetworkLayer;
+				PRODUCT_NAME = GMSNetworkLayer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -710,6 +1099,43 @@
 			};
 			name = Release;
 		};
+		CFAAA0E74142B8DCD154D2F26AC669DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9F733466775A257D26BBAFA6E919B71 /* Pods-MarvelApp-MarvelAppUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-MarvelApp-MarvelAppUITests/Pods-MarvelApp-MarvelAppUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MarvelApp-MarvelAppUITests/Pods-MarvelApp-MarvelAppUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -718,6 +1144,24 @@
 			buildConfigurations = (
 				BC01E0B73776AF6B58DC318A9BE988D7 /* Debug */,
 				C605C363CC9F26F9FF97DBB1D5C6E25C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5DBA57A5F0A0734FFB4AEB92EC599887 /* Build configuration list for PBXNativeTarget "Pods-MarvelApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				10A5C621FF68001B8A3CB8D361F1389B /* Debug */,
+				83DD45BB6E3281F057F4C20EA0C2B19D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6BAF39E6A378215809E1890FC21BC500 /* Build configuration list for PBXNativeTarget "Pods-MarvelApp-MarvelAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFAAA0E74142B8DCD154D2F26AC669DC /* Debug */,
+				0E1CF450A5AB2D5F06C6CE3D8C6AC292 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -731,20 +1175,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		87216700452FF68FA397EEEB0ADC45AA /* Build configuration list for PBXNativeTarget "Pods-MarvelApp-MarvelAppUITests" */ = {
+		96ECCCC6F0EBF49F0D8CCE0126556504 /* Build configuration list for PBXNativeTarget "GMSNetworkLayer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				71576AD841F9E4F16EB54EE6D11F40C1 /* Debug */,
-				A4D14CDACD0910EA1D74818A1B3D5DF5 /* Release */,
+				47EB510B0D713424378523B84FE69E7D /* Debug */,
+				BB2CD88B861DC4A796FADD217AD9084F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A76CF8499F062136F936DFD2A882561C /* Build configuration list for PBXNativeTarget "Pods-MarvelApp" */ = {
+		F7C362A41075A0B1B58A6F7E3D7C9E62 /* Build configuration list for PBXNativeTarget "Arcane" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				607632723EC8EBCE58AEC90BD23EA4A5 /* Debug */,
-				0679815DE417996EF561DDC24F428C20 /* Release */,
+				495413C60ABBEADC6E8612F46ABACBDC /* Debug */,
+				046DC4CCB5D89A40EF394E4F338A1DC2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
