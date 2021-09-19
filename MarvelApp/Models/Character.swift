@@ -24,10 +24,14 @@ struct Character: Decodable {
 
 struct Thumbnail: Codable {
     let path: String
-    let `extension`: ThumbnailExtension
+    let `extension`: String
 }
 
-enum ThumbnailExtension: String, Codable {
-    case gif
-    case jpg
+extension Thumbnail {
+    var url: URL? {
+        URL(string: path + "." + `extension`)
+    }
 }
+
+extension Character: Hashable {}
+extension Thumbnail: Hashable {}
