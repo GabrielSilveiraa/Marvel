@@ -13,7 +13,8 @@ final class CharactersViewController: ViewCodedViewController<CharactersView> {
 
     private lazy var viewModelOutput: CharactersViewModelOutput = {
         let input = CharactersViewModelInput(viewDidLoad: viewDidLoadSubject.eraseToAnyPublisher(),
-                                             willDisPlayCell: willDisplayCellSubject.eraseToAnyPublisher())
+                                             willDisplayCell: willDisplayCellSubject.eraseToAnyPublisher(),
+                                             reloadButtonTapped: reloadButtonTapSubject.eraseToAnyPublisher())
         return viewModel.transform(input: input)
     }()
 
@@ -27,6 +28,7 @@ final class CharactersViewController: ViewCodedViewController<CharactersView> {
 
     private let viewDidLoadSubject: PassthroughSubject<Void, Never> = .init()
     private let willDisplayCellSubject: PassthroughSubject<IndexPath, Never> = .init()
+    private let reloadButtonTapSubject: PassthroughSubject<Void, Never> = .init()
     private var subscriptions: Set<AnyCancellable> = .init()
 
     init(viewModel: CharactersViewModelProtocol) {
@@ -41,29 +43,50 @@ final class CharactersViewController: ViewCodedViewController<CharactersView> {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTitle()
+        setupReloadButtonTitle()
         setupTableViewDelegate()
+        setupReloadButtonTarget()
         setupBindings()
 
         viewDidLoadSubject.send(())
     }
 
+    //MARK: - Private Functions
     private func setupTitle() {
         title = viewModelOutput.title
+    }
+
+    private func setupReloadButtonTitle() {
+        customView.reloadButton.setTitle(viewModelOutput.reloadButtonTitle, for: .normal)
     }
 
     private func setupTableViewDelegate() {
         customView.collectionView.delegate = self
     }
 
+    private func setupReloadButtonTarget() {
+        customView.reloadButton.addTarget(self, action: #selector(reloadButtonTapped), for: .touchUpInside)
+    }
+
     private func setupBindings() {
         viewModelOutput.cellsViewModel
-            .sink { error in
-
-            } receiveValue: { [weak self] characterCellsViewModel in
+            .sink { [weak self] characterCellsViewModel in
+                self?.customView.collectionView.isHidden = false
+                self?.customView.reloadButton.isHidden = true
                 self?.setupSnapshot(items: characterCellsViewModel)
             }
             .store(in: &subscriptions)
 
+        viewModelOutput.error
+            .sink { [weak self] error in
+                self?.customView.collectionView.isHidden = true
+                self?.customView.reloadButton.isHidden = false
+            }
+            .store(in: &subscriptions)
+    }
+
+    @objc private func reloadButtonTapped() {
+        reloadButtonTapSubject.send(())
     }
 
     private func setupSnapshot(items: [CharacterCellViewModel]) {

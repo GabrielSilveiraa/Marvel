@@ -32,7 +32,7 @@ class CharactersServiceTests: XCTestCase {
                     XCTAssertEqual(characters.first?.name, "3-D Man")
                     XCTAssertEqual(characters.first?.description, "")
                     XCTAssertEqual(characters.first?.thumbnail.path, "http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784")
-                    XCTAssertEqual(characters.first?.thumbnail.extension, .jpg)
+                    XCTAssertEqual(characters.first?.thumbnail.extension, "jpg")
                     XCTAssertEqual(characters.first?.resourceURI, "http://gateway.marvel.com/v1/public/characters/1011334")
                     XCTAssertEqual(characters.first?.id, 1011334)
                   })

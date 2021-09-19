@@ -10,12 +10,24 @@ import Foundation
 
 struct CharacterCellViewModel {
     private let character: Character
+
+    init(character: Character) {
+        self.character = character
+    }
+}
+
+//MARK: - Internal Variables
+extension CharacterCellViewModel {
     var imageUrl: URL? {
         character.thumbnail.url
     }
 
-    init(character: Character) {
-        self.character = character
+    var characterName: String {
+        character.name
+    }
+
+    var characterDescription: String {
+        character.description
     }
 }
 
