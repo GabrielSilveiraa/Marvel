@@ -6,7 +6,8 @@ target 'MarvelApp' do
 
   pod 'GMSNetworkLayer', '~> 1.1'
   pod 'Arcane', git: 'https://github.com/onmyway133/Arcane'
-  
+  pod 'Kingfisher'
+
   target 'MarvelAppTests' do
     inherit! :search_paths
     # Pods for testing
