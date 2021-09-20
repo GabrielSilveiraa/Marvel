@@ -11,7 +11,7 @@ final class CharactersView: BaseView {
     //MARK: - UI Variables
     lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: frame, collectionViewLayout: collectionViewLayout)
-        collectionView.backgroundColor = .redMarvel
+        collectionView.backgroundColor = .clear
         collectionView.register(CharacterCollectionViewCell.self, forCellWithReuseIdentifier: String(describing: CharacterCollectionViewCell.self))
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView

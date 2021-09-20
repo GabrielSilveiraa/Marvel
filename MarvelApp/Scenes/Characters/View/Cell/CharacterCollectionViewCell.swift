@@ -23,14 +23,17 @@ final class CharacterCollectionViewCell: UICollectionViewCell {
     }()
 
     private let characterDescriptionTextView: UITextView = {
-        .init(fontType: .regular, size: 14, textColor: .blackMarvel)
+        let textView = UITextView(fontType: .regular, size: 14, textColor: .blackMarvel)
+        textView.textContainerInset.left = 0
+        textView.textContainer.lineFragmentPadding = 0.0
+        return textView
     }()
 
     //MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
         initialize()
-        setupContraints()
+        setupConstraints()
     }
 
     required init?(coder: NSCoder) {
@@ -45,7 +48,7 @@ final class CharacterCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(characterDescriptionTextView)
     }
 
-    private func setupContraints() {
+    private func setupConstraints() {
         setupCharacterImageViewConstraints()
         setupCharacterNameLabelConstraints()
         setupCharacterDescriptionLabelConstraints()
