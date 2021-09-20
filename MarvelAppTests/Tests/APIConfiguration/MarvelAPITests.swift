@@ -8,7 +8,7 @@
 import XCTest
 @testable import MarvelApp
 
-class MarvelAPITests: XCTestCase {
+final class MarvelAPITests: XCTestCase {
     private var marvelAuthenticationProvider = MockMarvelAuthenticationProvider()
 
     func testGetCharactersRouteBuildsCorrectly() {
@@ -26,11 +26,5 @@ extension MarvelAPITests {
         XCTAssertEqual(route.parameters["hash"] as? String, "fakeHash")
         XCTAssertEqual(route.parameters["ts"] as? String, "fakeTimestamp")
         XCTAssertEqual(route.parameters["apikey"] as? String, "fakeApiKey")
-    }
-}
-
-final class MockMarvelAuthenticationProvider: MarvelAuthenticationProviderProtocol {
-    func getAuthentication() -> MarvelAuthenticationObject? {
-        .init(apiKey: "fakeApiKey", hash: "fakeHash", timestamp: "fakeTimestamp")
     }
 }

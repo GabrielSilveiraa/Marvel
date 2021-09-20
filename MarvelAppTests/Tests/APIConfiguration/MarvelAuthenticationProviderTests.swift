@@ -8,7 +8,7 @@
 import XCTest
 @testable import MarvelApp
 
-class MarvelAuthenticationProviderTests: XCTestCase {
+final class MarvelAuthenticationProviderTests: XCTestCase {
     func testGetAuthentication() {
         let authenticationProvider = MarvelAuthenticationProvider(hashProvider: MockHashProvider.self,
                                                                   publicKey: "publicFakeKey",
@@ -20,11 +20,5 @@ class MarvelAuthenticationProviderTests: XCTestCase {
         XCTAssertEqual(authentication?.apiKey, "publicFakeKey")
         XCTAssertEqual(authentication?.hash, "123456privateFakeKeypublicFakeKey")
         XCTAssertEqual(authentication?.timestamp, "123456")
-    }
-}
-
-final class MockHashProvider: HashProviderProtocol {
-    static func MD5(_ string: String) -> String? {
-        string
     }
 }

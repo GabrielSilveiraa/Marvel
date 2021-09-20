@@ -10,7 +10,6 @@ import UIKit
 
 /// A ViewController class which helps to create a view coded layout
 /// https://swiftrocks.com/writing-cleaner-view-code-by-overriding-loadview.html
-///
 class ViewCodedViewController<CustomView: BaseView>: UIViewController {
     var customView: CustomView {
         return view as! CustomView //It will never fail as we're overriding 'view'

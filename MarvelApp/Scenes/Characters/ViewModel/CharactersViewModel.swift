@@ -42,10 +42,10 @@ final class CharactersViewModel {
     }
 
     private func loadCharacters() -> AnyPublisher<[CharacterCellViewModel], Never> {
-        return service.getCharacters(offset: offset)
+        service.getCharacters(offset: offset)
             .receive(on: RunLoop.main)
             .map { characters in
-                return characters.map { CharacterCellViewModel(character: $0) }
+                characters.map { CharacterCellViewModel(character: $0) }
             }
             .catch { [weak self] error -> AnyPublisher<[CharacterCellViewModel], Never> in
                 self?.errorSubject.send(error)
@@ -59,11 +59,11 @@ final class CharactersViewModel {
 
     private func retrieveScrollEvent(input: CharactersViewModelInput) -> AnyPublisher<Void, Never> {
         input.willDisplayCell
+            .debounce(for: .seconds(1), scheduler: RunLoop.main)
             .filter { [weak self] indexPath in
                 guard let self = self else { return false }
-                return indexPath.row >= self.characters.count - 10
+                return indexPath.row >= self.characters.count - 15
             }
-            .debounce(for: .seconds(1), scheduler: RunLoop.main)
             .handleEvents(receiveOutput: { [weak self] _ in self?.offset += 20 })
             .flatMap { _ in Just(()) }
             .eraseToAnyPublisher()
