@@ -2,16 +2,19 @@ PODS:
   - Arcane (2.1.1)
   - GMSNetworkLayer (1.1.3)
   - Kingfisher (6.3.1)
+  - PixelTest (2.3.0)
 
 DEPENDENCIES:
   - Arcane (from `https://github.com/onmyway133/Arcane`)
   - GMSNetworkLayer (~> 1.1)
   - Kingfisher
+  - PixelTest (~> 2.3.0)
 
 SPEC REPOS:
   trunk:
     - GMSNetworkLayer
     - Kingfisher
+    - PixelTest
 
 EXTERNAL SOURCES:
   Arcane:
@@ -26,7 +29,8 @@ SPEC CHECKSUMS:
   Arcane: dd18aa22c97de24a6d2cbab703d74efff9094bb0
   GMSNetworkLayer: 0e72d1c2b285f439bf24e7ede18acc7e07f0f312
   Kingfisher: 016c8b653a35add51dd34a3aba36b580041acc74
+  PixelTest: bf8ebcab58def20fbcf4ff791b80b74687eb4529
 
-PODFILE CHECKSUM: 7a7f5d65ccca258fdf22200c5787dd15a8e98e2b
+PODFILE CHECKSUM: cc135d738eef781270d0861d22b8faad4a51cf33
 
 COCOAPODS: 1.10.1

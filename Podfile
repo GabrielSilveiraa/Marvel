@@ -9,12 +9,13 @@ target 'MarvelApp' do
   pod 'Kingfisher'
 
   target 'MarvelAppTests' do
-    inherit! :search_paths
-    # Pods for testing
   end
 
   target 'MarvelAppUITests' do
-    # Pods for testing
+  end
+
+  target 'MarvelSnapshotTests' do
+    pod 'PixelTest', '~> 2.3.0'
   end
 
 end
