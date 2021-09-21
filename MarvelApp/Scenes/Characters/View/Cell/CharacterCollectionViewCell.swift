@@ -19,7 +19,7 @@ final class CharacterCollectionViewCell: UICollectionViewCell {
     }()
 
     private var characterNameLabel: UILabel = {
-        .init(fontType: .bold, size: 16, textColor: .blackMarvel, numberOfLines: 1)
+        .init(fontType: .bold, size: 16, textColor: .blackMarvel, numberOfLines: 2)
     }()
 
     private let characterDescriptionTextView: UITextView = {
@@ -76,6 +76,7 @@ final class CharacterCollectionViewCell: UICollectionViewCell {
 
     //MARK: - Internal functions
     func configure(viewModel: CharacterCellViewModel) {
+        accessibilityIdentifier = "Character Cell"
         characterImageView.kf.setImage(with: viewModel.imageUrl)
         characterNameLabel.text = viewModel.characterName
         characterDescriptionTextView.text = viewModel.characterDescription

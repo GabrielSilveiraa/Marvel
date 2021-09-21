@@ -24,7 +24,7 @@ final class CharactersServiceTests: XCTestCase {
     func testGetCharactersMapsResponseCorrectly() {
         let charactersJson: MarvelApiResponse<Character>? = loadJson(filename: "Characters")
         mockNetworkManager.forcedResponse = charactersJson
-        service.getCharacters(offset: 0)
+        service.getCharacters(filter: "", offset: 0, limit: 20)
             .sink(receiveCompletion: { _ in },
                   receiveValue: { characters in
                     XCTAssertEqual(characters.count, 20)
@@ -41,7 +41,7 @@ final class CharactersServiceTests: XCTestCase {
 
     func testGetCharactersMapsErrorOnServiceError() {
         mockNetworkManager.forcedError = TestError.fake
-        service.getCharacters(offset: 0)
+        service.getCharacters(filter: "", offset: 0, limit: 20)
             .sink(receiveCompletion: { completion in
                 if case .failure(let error) = completion {
                     XCTAssertEqual(error as? TestError, TestError.fake)

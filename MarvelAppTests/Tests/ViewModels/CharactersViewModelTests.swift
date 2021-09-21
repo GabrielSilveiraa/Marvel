@@ -18,6 +18,7 @@ final class CharactersViewModelTests: XCTestCase {
     private var fakeViewDidLoadInput: CurrentValueSubject<Void, Never>!
     private var fakeWillDisplayCellInput: PassthroughSubject<IndexPath, Never>!
     private var fakeReloadButtonTappedInput: PassthroughSubject<Void, Never>!
+    private var fakeSearchFilterTypedInput: PassthroughSubject<String, Never>!
 
     private var subscriptions = Set<AnyCancellable>()
 
@@ -48,15 +49,17 @@ final class CharactersViewModelTests: XCTestCase {
         fakeViewDidLoadInput = .init(())
         fakeWillDisplayCellInput = .init()
         fakeReloadButtonTappedInput = .init()
-
+        fakeSearchFilterTypedInput = .init()
+        
         let input = CharactersViewModelInput(viewDidLoad: fakeViewDidLoadInput.eraseToAnyPublisher(),
                                              willDisplayCell: fakeWillDisplayCellInput.eraseToAnyPublisher(),
+                                             searchFilterTyped: fakeSearchFilterTypedInput.eraseToAnyPublisher(),
                                              reloadButtonTapped: fakeReloadButtonTappedInput.eraseToAnyPublisher())
         output = viewModel.transform(input: input)
     }
 
     func testTransformReturnStaticOutputs() {
-        XCTAssertEqual(output.title, "Characters")
+        XCTAssertEqual(output.title, "Marvel Characters")
         XCTAssertEqual(output.reloadButtonTitle, "There was an error. Tap to reload")
     }
 
@@ -85,7 +88,7 @@ final class CharactersViewModelTests: XCTestCase {
         let expectation = expectation(description: "")
         var isFirstCall = true
 
-        self.service.injectedCharactersPublisher = Just(self.fakeCharacters(count: 20))
+        self.service.injectedCharactersPublisher = Just(self.fakeCharacters(count: 50))
                                                     .setFailureType(to: Error.self)
                                                     .eraseToAnyPublisher()
 
@@ -93,10 +96,10 @@ final class CharactersViewModelTests: XCTestCase {
             .sink { [weak self] items in
                 guard !isFirstCall else {
                     isFirstCall = false
-                    self?.fakeWillDisplayCellInput.send(IndexPath(row: 10, section: 0))
+                    self?.fakeWillDisplayCellInput.send(IndexPath(row: 30, section: 0))
                     return
                 }
-                XCTAssertEqual(items.count, 40)
+                XCTAssertEqual(items.count, 100)
                 expectation.fulfill()
             }
             .store(in: &self.subscriptions)
@@ -109,7 +112,7 @@ final class CharactersViewModelTests: XCTestCase {
         notExpectation.isInverted = true
         var isFirstCall = true
 
-        self.service.injectedCharactersPublisher = Just(self.fakeCharacters(count: 20))
+        self.service.injectedCharactersPublisher = Just(self.fakeCharacters(count: 50))
                                                     .setFailureType(to: Error.self)
                                                     .eraseToAnyPublisher()
 
@@ -168,14 +171,34 @@ final class CharactersViewModelTests: XCTestCase {
         wait(for: [expectation], timeout: 5)
     }
 
-    private func fakeCharacters(count: Int) -> [Character] {
-        (0..<count).indices.map { i in
-            Character(id: i,
-                      name: "fakeCharacter\(i)",
-                       description: "fakeDescription\(i)",
-                       thumbnail: .init(path: "http://fakePath\(i)",
-                                        extension: "fakeDescription\(i)"),
-                       resourceURI: "fakeResourceURI\(i)")
-        }
+    func testSearchTypedFetchesItems() {
+        let expectation = expectation(description: "")
+
+        self.service.injectedCharactersPublisher = Just(self.fakeCharacters(count: 2))
+                                                    .setFailureType(to: Error.self)
+                                                    .eraseToAnyPublisher()
+
+        self.output.cellsViewModel
+            .sink { items in
+                XCTAssertEqual(items.count, 2)
+                expectation.fulfill()
+            }
+            .store(in: &self.subscriptions)
+
+        fakeSearchFilterTypedInput.send("Fake Character")
+        wait(for: [expectation], timeout: 5)
     }
 }
+
+ private extension CharactersViewModelTests {
+     func fakeCharacters(count: Int) -> [Character] {
+         (0..<count).indices.map { i in
+             Character(id: i,
+                       name: "fakeCharacter\(i)",
+                        description: "fakeDescription\(i)",
+                        thumbnail: .init(path: "http://fakePath\(i)",
+                                         extension: "fakeDescription\(i)"),
+                        resourceURI: "fakeResourceURI\(i)")
+         }
+     }
+ }

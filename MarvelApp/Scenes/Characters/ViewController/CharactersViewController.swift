@@ -14,6 +14,7 @@ final class CharactersViewController: ViewCodedViewController<CharactersView> {
     private lazy var viewModelOutput: CharactersViewModelOutput = {
         let input = CharactersViewModelInput(viewDidLoad: viewDidLoadSubject.eraseToAnyPublisher(),
                                              willDisplayCell: willDisplayCellSubject.eraseToAnyPublisher(),
+                                             searchFilterTyped: searchFilterTypeSubject.eraseToAnyPublisher(),
                                              reloadButtonTapped: reloadButtonTapSubject.eraseToAnyPublisher())
         return viewModel.transform(input: input)
     }()
@@ -29,6 +30,8 @@ final class CharactersViewController: ViewCodedViewController<CharactersView> {
     private let viewDidLoadSubject: PassthroughSubject<Void, Never> = .init()
     private let willDisplayCellSubject: PassthroughSubject<IndexPath, Never> = .init()
     private let reloadButtonTapSubject: PassthroughSubject<Void, Never> = .init()
+    private let searchFilterTypeSubject: PassthroughSubject<String, Never> = .init()
+
     private var subscriptions: Set<AnyCancellable> = .init()
 
     init(viewModel: CharactersViewModelProtocol) {
@@ -46,6 +49,7 @@ final class CharactersViewController: ViewCodedViewController<CharactersView> {
         setupReloadButtonTitle()
         setupTableViewDelegate()
         setupReloadButtonTarget()
+        setupSearchTextFieldTarget()
         setupBindings()
 
         viewDidLoadSubject.send(())
@@ -66,6 +70,10 @@ final class CharactersViewController: ViewCodedViewController<CharactersView> {
 
     private func setupReloadButtonTarget() {
         customView.reloadButton.addTarget(self, action: #selector(reloadButtonTapped), for: .touchUpInside)
+    }
+
+    private func setupSearchTextFieldTarget() {
+        customView.searchTextField.addTarget(self, action: #selector(searchTextFieldDidChange), for: .editingChanged)
     }
 
     private func setupBindings() {
@@ -89,6 +97,10 @@ final class CharactersViewController: ViewCodedViewController<CharactersView> {
         reloadButtonTapSubject.send(())
     }
 
+    @objc private func searchTextFieldDidChange(_ textField: UITextField) {
+        searchFilterTypeSubject.send(textField.text ?? "")
+    }
+
     private func setupSnapshot(items: [CharacterCellViewModel]) {
         let shouldAnimate = !collectionViewDataSource.snapshot().itemIdentifiers.isEmpty
         var snapshot = NSDiffableDataSourceSnapshot<Section, CharacterCellViewModel>()
@@ -102,6 +114,12 @@ final class CharactersViewController: ViewCodedViewController<CharactersView> {
 extension CharactersViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         willDisplayCellSubject.send(indexPath)
+    }
+}
+
+extension CharactersViewController: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        searchFilterTypeSubject.send(textField.text ?? "")
     }
 }
 

@@ -10,7 +10,7 @@ import GMSNetworkLayer
 
 /// Responsible for declaring every possible route for the MarvelAPI
 enum MarvelAPIRoute {
-    case getCharacters(offset: Int)
+    case getCharacters(name: String?, offset: Int, limit: Int)
 }
 
 /// Contains the needed logic for creating any route from `MarvelAPIRoute`
@@ -58,7 +58,11 @@ extension MarvelAPI: EndPointType {
         var parameters: [String : Any] = [:]
 
         switch routeType {
-        case .getCharacters(let offset):
+        case .getCharacters(let name, let offset, let limit):
+            if let name = name, !name.isEmpty {
+                parameters["nameStartsWith"] = name
+            }
+            parameters["limit"] = limit
             parameters["offset"] = offset
         }
 

@@ -21,7 +21,8 @@ extension CharactersCoordinator: Coordinator {
         let navigationController = UINavigationController()
         navigationController.setupAppearance()
 
-        let viewModel = CharactersViewModel()
+        let service = CharactersService()
+        let viewModel = CharactersViewModel(service: service)
         let viewController = CharactersViewController(viewModel: viewModel)
         navigationController.viewControllers = [viewController]
 

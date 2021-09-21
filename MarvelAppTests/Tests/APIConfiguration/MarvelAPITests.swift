@@ -12,11 +12,24 @@ final class MarvelAPITests: XCTestCase {
     private var marvelAuthenticationProvider = MockMarvelAuthenticationProvider()
 
     func testGetCharactersRouteBuildsCorrectly() {
-        let getCharactersRoute = MarvelAPI(routeType: .getCharacters(offset: 2), authenticationProvider: marvelAuthenticationProvider)
+        let getCharactersRoute = MarvelAPI(routeType: .getCharacters(name: "Fake", offset: 2, limit: 20), authenticationProvider: marvelAuthenticationProvider)
         XCTAssertEqual(getCharactersRoute.baseURL, URL(string: "https://gateway.marvel.com/v1/public"))
         XCTAssertEqual(getCharactersRoute.path, "/characters")
         XCTAssertEqual(getCharactersRoute.httpMethod, .get)
         XCTAssertEqual(getCharactersRoute.parameters["offset"] as? Int, 2)
+        XCTAssertEqual(getCharactersRoute.parameters["nameStartsWith"] as? String, "Fake")
+        XCTAssertEqual(getCharactersRoute.parameters["limit"] as? Int, 20)
+        testAuthenticationParametersArePresent(for: getCharactersRoute)
+    }
+
+    func testGetCharactersRouteWithNoFilterBuildsCorrectly() {
+        let getCharactersRoute = MarvelAPI(routeType: .getCharacters(name: "", offset: 2, limit: 20), authenticationProvider: marvelAuthenticationProvider)
+        XCTAssertEqual(getCharactersRoute.baseURL, URL(string: "https://gateway.marvel.com/v1/public"))
+        XCTAssertEqual(getCharactersRoute.path, "/characters")
+        XCTAssertEqual(getCharactersRoute.httpMethod, .get)
+        XCTAssertEqual(getCharactersRoute.parameters["offset"] as? Int, 2)
+        XCTAssertEqual(getCharactersRoute.parameters["limit"] as? Int, 20)
+        XCTAssertNil(getCharactersRoute.parameters["nameStartsWith"])
         testAuthenticationParametersArePresent(for: getCharactersRoute)
     }
 }

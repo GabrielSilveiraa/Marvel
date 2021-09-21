@@ -22,8 +22,8 @@
 		CD4CB5EF26F4F7C00035CDA4 /* CharacterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4CB5EE26F4F7C00035CDA4 /* CharacterCollectionViewCell.swift */; };
 		CD4CB5F126F4F87B0035CDA4 /* CharacterCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4CB5F026F4F87B0035CDA4 /* CharacterCellViewModel.swift */; };
 		CD4CB5F326F4FD510035CDA4 /* UICollectionView+DequeuingReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4CB5F226F4FD510035CDA4 /* UICollectionView+DequeuingReusableCell.swift */; };
-		CD4CB5F526F7C5D10035CDA4 /* UILabel+UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4CB5F426F7C5D10035CDA4 /* UILabel+UIFont.swift */; };
-		CD4CB5F826F7E4250035CDA4 /* UITextView+UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4CB5F726F7E4250035CDA4 /* UITextView+UILabel.swift */; };
+		CD4CB5F526F7C5D10035CDA4 /* UILabel+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4CB5F426F7C5D10035CDA4 /* UILabel+Init.swift */; };
+		CD4CB5F826F7E4250035CDA4 /* UITextView+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4CB5F726F7E4250035CDA4 /* UITextView+Init.swift */; };
 		CD52FB4E26F10146008DFD07 /* Encodable+Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD52FB4D26F10146008DFD07 /* Encodable+Dictionary.swift */; };
 		CD52FB5226F104EA008DFD07 /* MarvelAuthenticationProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD52FB5126F104EA008DFD07 /* MarvelAuthenticationProviderTests.swift */; };
 		CD52FB5426F10F5E008DFD07 /* MarvelAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD52FB5326F10F5E008DFD07 /* MarvelAPITests.swift */; };
@@ -97,8 +97,8 @@
 		CD4CB5EE26F4F7C00035CDA4 /* CharacterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCollectionViewCell.swift; sourceTree = "<group>"; };
 		CD4CB5F026F4F87B0035CDA4 /* CharacterCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCellViewModel.swift; sourceTree = "<group>"; };
 		CD4CB5F226F4FD510035CDA4 /* UICollectionView+DequeuingReusableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+DequeuingReusableCell.swift"; sourceTree = "<group>"; };
-		CD4CB5F426F7C5D10035CDA4 /* UILabel+UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+UIFont.swift"; sourceTree = "<group>"; };
-		CD4CB5F726F7E4250035CDA4 /* UITextView+UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+UILabel.swift"; sourceTree = "<group>"; };
+		CD4CB5F426F7C5D10035CDA4 /* UILabel+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Init.swift"; sourceTree = "<group>"; };
+		CD4CB5F726F7E4250035CDA4 /* UITextView+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Init.swift"; sourceTree = "<group>"; };
 		CD52FB4D26F10146008DFD07 /* Encodable+Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Dictionary.swift"; sourceTree = "<group>"; };
 		CD52FB5126F104EA008DFD07 /* MarvelAuthenticationProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelAuthenticationProviderTests.swift; sourceTree = "<group>"; };
 		CD52FB5326F10F5E008DFD07 /* MarvelAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelAPITests.swift; sourceTree = "<group>"; };
@@ -279,8 +279,8 @@
 				CD4165D126F3EECA00CA8ED1 /* UINavigation+MarvelAppearance.swift */,
 				CD4165D326F3EF8200CA8ED1 /* UIColor+MarvelColors.swift */,
 				CD4CB5F226F4FD510035CDA4 /* UICollectionView+DequeuingReusableCell.swift */,
-				CD4CB5F426F7C5D10035CDA4 /* UILabel+UIFont.swift */,
-				CD4CB5F726F7E4250035CDA4 /* UITextView+UILabel.swift */,
+				CD4CB5F426F7C5D10035CDA4 /* UILabel+Init.swift */,
+				CD4CB5F726F7E4250035CDA4 /* UITextView+Init.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -797,13 +797,13 @@
 				CD4165D026F3E4EB00CA8ED1 /* CharactersView.swift in Sources */,
 				CDE235AF26F0E4FB0000DC99 /* SceneDelegate.swift in Sources */,
 				CD4CB5EF26F4F7C00035CDA4 /* CharacterCollectionViewCell.swift in Sources */,
-				CD4CB5F526F7C5D10035CDA4 /* UILabel+UIFont.swift in Sources */,
+				CD4CB5F526F7C5D10035CDA4 /* UILabel+Init.swift in Sources */,
 				CDE235DE26F0F7320000DC99 /* MarvelAPI.swift in Sources */,
 				CD4165C526F393AC00CA8ED1 /* BaseView.swift in Sources */,
 				CD4CB5F326F4FD510035CDA4 /* UICollectionView+DequeuingReusableCell.swift in Sources */,
 				CD52FB5626F11231008DFD07 /* CharactersService.swift in Sources */,
 				CD4165D226F3EECA00CA8ED1 /* UINavigation+MarvelAppearance.swift in Sources */,
-				CD4CB5F826F7E4250035CDA4 /* UITextView+UILabel.swift in Sources */,
+				CD4CB5F826F7E4250035CDA4 /* UITextView+Init.swift in Sources */,
 				CDE235E226F0FC530000DC99 /* MarvelAPIAuthenticationProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,8 +10,14 @@ import Combine
 
 final class MockCharactersService: CharactersServiceProtocol {
     var injectedCharactersPublisher: AnyPublisher<[Character], Error>!
+    var filterCalled: String?
+    var offsetCalled: Int?
+    var limitCalled: Int?
 
-    func getCharacters(offset: Int) -> AnyPublisher<[Character], Error> {
-        injectedCharactersPublisher
+    func getCharacters(filter: String, offset: Int, limit: Int) -> AnyPublisher<[Character], Error> {
+        filterCalled = filter
+        offsetCalled = offset
+        limitCalled = limit
+        return injectedCharactersPublisher
     }
 }
