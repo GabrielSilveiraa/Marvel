@@ -9,7 +9,7 @@ import GMSNetworkLayer
 import Combine
 
 protocol CharactersServiceProtocol {
-    func getCharacters(offset: Int) -> AnyPublisher<[Character], Error>
+    func getCharacters(filter: String, offset: Int, limit: Int) -> AnyPublisher<[Character], Error>
 }
 
 final class CharactersService {
@@ -21,9 +21,9 @@ final class CharactersService {
 }
 
 extension CharactersService: CharactersServiceProtocol {
-    func getCharacters(offset: Int) -> AnyPublisher<[Character], Error> {
+    func getCharacters(filter: String, offset: Int, limit: Int) -> AnyPublisher<[Character], Error> {
         Future<[Character], Error>() { [weak self] promise in
-            let route = MarvelAPI(routeType: .getCharacters(offset: offset))
+            let route = MarvelAPI(routeType: .getCharacters(name: filter, offset: offset, limit: limit))
             self?.networkManager.request(route) { (result: Result<MarvelApiResponse<Character>, Error>) in
                 switch result {
                 case .success(let response):

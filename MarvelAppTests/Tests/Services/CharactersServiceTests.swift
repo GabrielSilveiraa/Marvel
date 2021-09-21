@@ -7,13 +7,12 @@
 
 import XCTest
 import Combine
-import GMSNetworkLayer
 @testable import MarvelApp
 
-class CharactersServiceTests: XCTestCase {
-    var service: CharactersService!
-    var mockNetworkManager: MockNetworkManager!
-    var subscriptions: Set<AnyCancellable>!
+final class CharactersServiceTests: XCTestCase {
+    private var service: CharactersService!
+    private var mockNetworkManager: MockNetworkManager!
+    private var subscriptions: Set<AnyCancellable>!
 
     override func setUp() {
         super.setUp()
@@ -25,15 +24,16 @@ class CharactersServiceTests: XCTestCase {
     func testGetCharactersMapsResponseCorrectly() {
         let charactersJson: MarvelApiResponse<Character>? = loadJson(filename: "Characters")
         mockNetworkManager.forcedResponse = charactersJson
-        service.getCharacters(offset: 0)
+        service.getCharacters(filter: "", offset: 0, limit: 20)
             .sink(receiveCompletion: { _ in },
                   receiveValue: { characters in
                     XCTAssertEqual(characters.count, 20)
                     XCTAssertEqual(characters.first?.name, "3-D Man")
                     XCTAssertEqual(characters.first?.description, "")
                     XCTAssertEqual(characters.first?.thumbnail.path, "http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784")
-                    XCTAssertEqual(characters.first?.thumbnail.extension, .jpg)
+                    XCTAssertEqual(characters.first?.thumbnail.extension, "jpg")
                     XCTAssertEqual(characters.first?.resourceURI, "http://gateway.marvel.com/v1/public/characters/1011334")
+                    XCTAssertEqual(characters.first?.thumbnail.url, URL(string: "http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784.jpg"))
                     XCTAssertEqual(characters.first?.id, 1011334)
                   })
             .store(in: &subscriptions)
@@ -41,7 +41,7 @@ class CharactersServiceTests: XCTestCase {
 
     func testGetCharactersMapsErrorOnServiceError() {
         mockNetworkManager.forcedError = TestError.fake
-        service.getCharacters(offset: 0)
+        service.getCharacters(filter: "", offset: 0, limit: 20)
             .sink(receiveCompletion: { completion in
                 if case .failure(let error) = completion {
                     XCTAssertEqual(error as? TestError, TestError.fake)
@@ -50,23 +50,3 @@ class CharactersServiceTests: XCTestCase {
             .store(in: &subscriptions)
     }
 }
-
-final class MockNetworkManager: NetworkManagerProtocol {
-    var forcedResponse: Decodable?
-    var forcedError: Error?
-
-    func request<T>(_ route: EndPointType, completion: @escaping NetworkCompletion<T>) where T : Decodable {
-        if let forcedResponse = forcedResponse as? T {
-            completion(.success(forcedResponse))
-        }
-
-        if let forcedError = forcedError {
-            completion(.failure(forcedError))
-        }
-    }
-}
-
-fileprivate enum TestError: Error {
-    case fake
-}
-
