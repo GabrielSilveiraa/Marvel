@@ -8,22 +8,27 @@ DEPENDENCIES:
   - Arcane (from `https://github.com/onmyway133/Arcane`)
   - GMSNetworkLayer (~> 1.1)
   - Kingfisher
-  - PixelTest (~> 2.3.0)
+  - PixelTest (from `https://github.com/keither04/PixelTest.git`, branch `bugfix/disambiguate-selector-xcode-13`)
 
 SPEC REPOS:
   trunk:
     - GMSNetworkLayer
     - Kingfisher
-    - PixelTest
 
 EXTERNAL SOURCES:
   Arcane:
     :git: https://github.com/onmyway133/Arcane
+  PixelTest:
+    :branch: bugfix/disambiguate-selector-xcode-13
+    :git: https://github.com/keither04/PixelTest.git
 
 CHECKOUT OPTIONS:
   Arcane:
     :commit: 30248144823e890981b38e7908c9b2b8204c3f51
     :git: https://github.com/onmyway133/Arcane
+  PixelTest:
+    :commit: 8156a47eb9a30d6ed87d28f073c3d50154cdfa47
+    :git: https://github.com/keither04/PixelTest.git
 
 SPEC CHECKSUMS:
   Arcane: dd18aa22c97de24a6d2cbab703d74efff9094bb0
@@ -31,6 +36,6 @@ SPEC CHECKSUMS:
   Kingfisher: 016c8b653a35add51dd34a3aba36b580041acc74
   PixelTest: bf8ebcab58def20fbcf4ff791b80b74687eb4529
 
-PODFILE CHECKSUM: cc135d738eef781270d0861d22b8faad4a51cf33
+PODFILE CHECKSUM: ed6fe4eb426216233d9214cded5dceab7d128c2f
 
 COCOAPODS: 1.10.1

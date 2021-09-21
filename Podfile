@@ -15,7 +15,9 @@ target 'MarvelApp' do
   end
 
   target 'MarvelSnapshotTests' do
-    pod 'PixelTest', '~> 2.3.0'
+#    Temporary branch since there's an issue with Xcode 13 and it was not merged to main branch yet
+#    pod 'PixelTest'
+    pod 'PixelTest', :git => 'https://github.com/keither04/PixelTest.git', :branch => 'bugfix/disambiguate-selector-xcode-13'
   end
 
 end
