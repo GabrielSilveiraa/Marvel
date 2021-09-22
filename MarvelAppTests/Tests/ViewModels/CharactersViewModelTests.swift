@@ -64,7 +64,7 @@ final class CharactersViewModelTests: XCTestCase {
     }
 
     func testViewDidLoadFetchesItemsAndCellViewModelIsCorrectlyMapped() {
-        let expectation = expectation(description: "")
+        let exp = expectation(description: "")
         self.service.injectedCharactersPublisher = Just(self.fakeCharacters(count: 2))
                                                     .setFailureType(to: Error.self)
                                                     .eraseToAnyPublisher()
@@ -77,15 +77,15 @@ final class CharactersViewModelTests: XCTestCase {
                 XCTAssertEqual(items[1].characterName, "fakeCharacter1")
                 XCTAssertEqual(items[1].characterDescription, "fakeDescription1")
                 XCTAssertEqual(items[1].imageUrl, URL(string: "http://fakePath1.fakeDescription1"))
-                expectation.fulfill()
+                exp.fulfill()
             }
             .store(in: &self.subscriptions)
 
-        wait(for: [expectation], timeout: 5)
+        wait(for: [exp], timeout: 5)
     }
 
     func testWillDisplayCellFetchesMoreItemsWhenMatchesCriteria() {
-        let expectation = expectation(description: "")
+        let exp = expectation(description: "")
         var isFirstCall = true
 
         self.service.injectedCharactersPublisher = Just(self.fakeCharacters(count: 50))
@@ -100,11 +100,11 @@ final class CharactersViewModelTests: XCTestCase {
                     return
                 }
                 XCTAssertEqual(items.count, 100)
-                expectation.fulfill()
+                exp.fulfill()
             }
             .store(in: &self.subscriptions)
 
-        wait(for: [expectation], timeout: 5)
+        wait(for: [exp], timeout: 5)
     }
 
     func testWillDisplayCellDoesNotFetchMoreItemsWhenCriteriaIsNotMatch() {
@@ -133,14 +133,14 @@ final class CharactersViewModelTests: XCTestCase {
         let notExpectation = expectation(description: "")
         notExpectation.isInverted = true
 
-        let expectation = expectation(description: "")
+        let exp = expectation(description: "")
 
         self.service.injectedCharactersPublisher = Fail(error: TestError.fake).eraseToAnyPublisher()
 
         self.output.error
             .sink { error in
                 XCTAssertEqual(error as? TestError, TestError.fake)
-                expectation.fulfill()
+                exp.fulfill()
             }
             .store(in: &self.subscriptions)
 
@@ -150,17 +150,17 @@ final class CharactersViewModelTests: XCTestCase {
             }
             .store(in: &self.subscriptions)
 
-        wait(for: [expectation, notExpectation], timeout: 5)
+        wait(for: [exp, notExpectation], timeout: 5)
     }
 
     func testReloadButtonTappedFetchesItems() {
-        let expectation = expectation(description: "")
+        let exp = expectation(description: "")
         setup(serviceCharactersPublisher: Fail(error: TestError.fake).eraseToAnyPublisher())
 
         self.output.cellsViewModel
             .sink { items in
                 XCTAssertEqual(items.count, 2)
-                expectation.fulfill()
+                exp.fulfill()
             }
             .store(in: &self.subscriptions)
 
@@ -168,11 +168,11 @@ final class CharactersViewModelTests: XCTestCase {
                                                     .setFailureType(to: Error.self)
                                                     .eraseToAnyPublisher()
         fakeReloadButtonTappedInput.send(())
-        wait(for: [expectation], timeout: 5)
+        wait(for: [exp], timeout: 5)
     }
 
     func testSearchTypedFetchesItems() {
-        let expectation = expectation(description: "")
+        let exp = expectation(description: "")
 
         self.service.injectedCharactersPublisher = Just(self.fakeCharacters(count: 2))
                                                     .setFailureType(to: Error.self)
@@ -181,12 +181,12 @@ final class CharactersViewModelTests: XCTestCase {
         self.output.cellsViewModel
             .sink { items in
                 XCTAssertEqual(items.count, 2)
-                expectation.fulfill()
+                exp.fulfill()
             }
             .store(in: &self.subscriptions)
 
         fakeSearchFilterTypedInput.send("Fake Character")
-        wait(for: [expectation], timeout: 5)
+        wait(for: [exp], timeout: 5)
     }
 }
 
