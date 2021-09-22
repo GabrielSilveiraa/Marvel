@@ -11,9 +11,7 @@ jobs:
       with:
         xcode-version: latest
     - name: Install Dependencies
-      run: |
-        cd Example
-        pod install --repo-update
+      run: pod install --repo-update
       shell: bash
     - name: Test
       uses: ty0x2333/cocoapods-action@master
