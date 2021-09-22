@@ -1,7 +1,7 @@
 name: Workflow
 on: [push, pull_request]
 jobs:
-  test:
+  Test:
     runs-on: macOS-latest
     steps:
     - name: Checkout
@@ -21,3 +21,12 @@ jobs:
         scheme: MarvelApp
         additional_build_params: -destination 'platform=iOS Simulator,id=2B687EA3-12C4-4E51-A7B6-FEEBE2F39915'
         lint: false
+    - name: Upload codecoverage
+      uses: codecov/codecov-action@v2
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+#         files: ./coverage1.xml,./coverage2.xml # optional
+#         flags: unittests # optional
+#         name: codecov-umbrella # optional
+        fail_ci_if_error: true # optional (default = false)
+#         verbose: true # optional (default = false)
