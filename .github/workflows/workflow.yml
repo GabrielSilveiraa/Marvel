@@ -19,7 +19,7 @@ jobs:
         additional_lint_params: --private
         workspace: MarvelApp.xcworkspace
         scheme: MarvelApp
-        additional_build_params: -destination 'platform=iOS Simulator,id=2B687EA3-12C4-4E51-A7B6-FEEBE2F39915'
+        additional_build_params: -destination 'platform=iOS Simulator,id=5DFD17AB-D384-42ED-A40A-2A70C41F6488'
         lint: false
     - name: Upload codecoverage
       run: bash <(curl -s https://codecov.io/bash)
