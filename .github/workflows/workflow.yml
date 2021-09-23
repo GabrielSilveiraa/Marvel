@@ -17,5 +17,6 @@ jobs:
       run: |
         xcodebuild test -workspace MarvelApp.xcworkspace -scheme MarvelApp -sdk iphonesimulator -enableCodeCoverage YES -destination "platform=iOS Simulator,name=iPhone 12 Pro Max,OS=14.4"
     - name: Upload codecoverage
-      run: bash <(curl -s https://codecov.io/bash)
-      shell: bash
+      uses: codecov/codecov-action@v2
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
