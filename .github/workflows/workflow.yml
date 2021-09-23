@@ -14,13 +14,8 @@ jobs:
       run: pod install --repo-update
       shell: bash
     - name: Test
-      uses: ty0x2333/cocoapods-action@master
-      with:
-        additional_lint_params: --private
-        workspace: MarvelApp.xcworkspace
-        scheme: MarvelApp
-        additional_build_params: -destination 'platform=iOS Simulator,id=5DFD17AB-D384-42ED-A40A-2A70C41F6488'
-        lint: false
+      run: |
+        xcodebuild test -workspace MarvelApp.xcworkspace -scheme MarvelApp -sdk iphonesimulator -enableCodeCoverage YES -destination "platform=iOS Simulator,name=iPhone 12 Pro Max,OS=14.4"
     - name: Upload codecoverage
       run: bash <(curl -s https://codecov.io/bash)
       shell: bash
