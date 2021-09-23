@@ -30,7 +30,16 @@ final class CharactersView: BaseView {
         return collectionView
     }()
 
-    var reloadButton: UIButton = {
+    let activityIndicatorView: UIActivityIndicatorView = {
+        let indicatorView = UIActivityIndicatorView(style: .medium)
+        indicatorView.translatesAutoresizingMaskIntoConstraints = false
+        indicatorView.hidesWhenStopped = true
+        indicatorView.color = .white
+        indicatorView.accessibilityIdentifier = "Activity Indicator"
+        return indicatorView
+    }()
+
+    let reloadButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.isHidden = true
@@ -57,8 +66,9 @@ final class CharactersView: BaseView {
 
     //MARK: - BaseView Setup
     func initialize() {
-        backgroundColor = .redMarvel
+        backgroundColor = .blurredRedMarvel
         addSubview(searchTextField)
+        addSubview(activityIndicatorView)
         addSubview(collectionView)
         addSubview(reloadButton)
     }
@@ -67,6 +77,7 @@ final class CharactersView: BaseView {
         setupSearchTextFieldConstraints()
         setupCollectionViewConstraints()
         setupReloadButtonConstraints()
+        setupIndicatorView()
     }
 
     //MARK: - Private Functions
@@ -87,5 +98,10 @@ final class CharactersView: BaseView {
     private func setupReloadButtonConstraints() {
         addConstraints([reloadButton.centerXAnchor.constraint(equalTo: centerXAnchor),
                         reloadButton.centerYAnchor.constraint(equalTo: centerYAnchor)])
+    }
+
+    private func setupIndicatorView() {
+        addConstraints([activityIndicatorView.centerXAnchor.constraint(equalTo: centerXAnchor),
+                        activityIndicatorView.centerYAnchor.constraint(equalTo: centerYAnchor)])
     }
 }

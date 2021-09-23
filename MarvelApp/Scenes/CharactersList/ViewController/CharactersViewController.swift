@@ -13,6 +13,7 @@ final class CharactersViewController: ViewCodedViewController<CharactersView> {
 
     private lazy var viewModelOutput: CharactersViewModelOutput = {
         let input = CharactersViewModelInput(viewDidLoad: viewDidLoadSubject.eraseToAnyPublisher(),
+                                             didSelectCell: didSelectCellSubject.eraseToAnyPublisher(),
                                              willDisplayCell: willDisplayCellSubject.eraseToAnyPublisher(),
                                              searchFilterTyped: searchFilterTypeSubject.eraseToAnyPublisher(),
                                              reloadButtonTapped: reloadButtonTapSubject.eraseToAnyPublisher())
@@ -27,11 +28,11 @@ final class CharactersViewController: ViewCodedViewController<CharactersView> {
         }
     }()
 
-    private let viewDidLoadSubject: PassthroughSubject<Void, Never> = .init()
+    private let viewDidLoadSubject: CurrentValueSubject<Void, Never> = .init(())
+    private let didSelectCellSubject: PassthroughSubject<IndexPath, Never> = .init()
     private let willDisplayCellSubject: PassthroughSubject<IndexPath, Never> = .init()
     private let reloadButtonTapSubject: PassthroughSubject<Void, Never> = .init()
     private let searchFilterTypeSubject: PassthroughSubject<String, Never> = .init()
-
     private var subscriptions: Set<AnyCancellable> = .init()
 
     init(viewModel: CharactersViewModelProtocol) {
@@ -45,14 +46,13 @@ final class CharactersViewController: ViewCodedViewController<CharactersView> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewDidLoadSubject.send(())
         setupTitle()
         setupReloadButtonTitle()
         setupTableViewDelegate()
         setupReloadButtonTarget()
         setupSearchTextFieldTarget()
         setupBindings()
-
-        viewDidLoadSubject.send(())
     }
 
     //MARK: - Private Functions
@@ -78,15 +78,29 @@ final class CharactersViewController: ViewCodedViewController<CharactersView> {
 
     private func setupBindings() {
         viewModelOutput.cellsViewModel
+            .handleEvents(receiveOutput: { [weak customView] _ in
+                customView?.activityIndicatorView.stopAnimating()
+                customView?.collectionView.isHidden = false
+                customView?.reloadButton.isHidden = true
+            })
             .sink { [weak self] characterCellsViewModel in
-                self?.customView.collectionView.isHidden = false
-                self?.customView.reloadButton.isHidden = true
                 self?.setupSnapshot(items: characterCellsViewModel)
             }
             .store(in: &subscriptions)
 
+        let loaderInputs = Publishers.Merge(viewDidLoadSubject .eraseToAnyPublisher(),
+                                            searchFilterTypeSubject.eraseToAnyPublisher()
+                                                .flatMap { _ in Just(())})
+
+        loaderInputs
+            .sink { [weak customView]_ in
+                customView?.activityIndicatorView.startAnimating()
+            }
+            .store(in: &subscriptions)
+
         viewModelOutput.error
-            .sink { [weak self] error in
+            .sink { [weak self] _ in
+                self?.customView.activityIndicatorView.stopAnimating()
                 self?.customView.collectionView.isHidden = true
                 self?.customView.reloadButton.isHidden = false
             }
@@ -114,6 +128,10 @@ final class CharactersViewController: ViewCodedViewController<CharactersView> {
 extension CharactersViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         willDisplayCellSubject.send(indexPath)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        didSelectCellSubject.send(indexPath)
     }
 }
 
