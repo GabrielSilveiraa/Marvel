@@ -22,6 +22,8 @@ jobs:
         additional_build_params: -destination 'platform=iOS Simulator,id=2B687EA3-12C4-4E51-A7B6-FEEBE2F39915'
         lint: false
     - name: Upload codecoverage
-      uses: codecov/codecov-action@v2
-      with:
-        token: ${{ secrets.CODECOV_TOKEN }}
+      run: bash <(curl -s https://codecov.io/bash)
+      shell: bash
+#       uses: codecov/codecov-action@v2
+#       with:
+#         token: ${{ secrets.CODECOV_TOKEN }}
