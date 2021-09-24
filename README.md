@@ -32,7 +32,7 @@ Every Scene is developed using the MVVM presentation architecture, along with a 
 
 The communication between the ViewController and ViewModel is done using Combine framework and a `transform(input: Input) -> Output` pattern described [here](https://medium.com/blablacar-tech/rxswift-mvvm-66827b8b3f10) 
 
-Every ViewController in the project inherits the `ViewCodedViewController` class, which uses a generic `BaseView` class. It's a pattern for view coding created by me and inspired by [this article](https://swiftrocks.com/writing-cleaner-view-code-by-overriding-loadview.html)
+Every ViewController in the project inherits from `ViewCodedViewController` class, which uses a generic `BaseView` class. It's a pattern for view coding created by me and inspired by [this article](https://swiftrocks.com/writing-cleaner-view-code-by-overriding-loadview.html)
 
 
 ## Issues I had while developing the project 🔨
@@ -41,7 +41,10 @@ Every ViewController in the project inherits the `ViewCodedViewController` class
 During the project development Xcode 13.0 was released and I wanted to update the project to maintain it working with the latest xcode version. Then I had an issue with [PixelTest](https://github.com/KaneCheshire/PixelTest) framework, which it wasn't building with iOS 15. So I found this [pull request](https://github.com/KaneCheshire/PixelTest/pull/74) which fixes it and then I had appointed to this branch in my Podfile.
 
 ### Travis CI Free Plan
-I used to have a free plan in Travis and have integrated this project with Travis CI. Also during development, my plan has expired. So I had to migrate my CI to Github Actions. It's working and testing the project fine. But found some limitations, which I describe in this [pull request](https://github.com/GabrielSilveiraa/Marvel/pull/8).
+I used to have a free plan in Travis and had integrated this project with Travis CI. And, also during development, my plan has expired. So I had to migrate to Github Actions. It's working and testing the project fine. But I found some limitations, which I describe in this [pull request](https://github.com/GabrielSilveiraa/Marvel/pull/8).
+
+### Codecovv Integration
+My integration with [Codecov](https://about.codecov.io/) was working fine on Travis, but after migrating to Github Action couldn't make it work. So, for now, there's not codecov badge. But you can check the project's code coverage at this [section](#code-coverage)
 
 ## Testing ✅
 
@@ -50,9 +53,10 @@ Unit, UI and Snapshot Tests.
 ### Code Coverage
 
 - 92,8%
+
 ![](img/codecoverage.png)
 
-### Snapshot Tests 📸
+### Snapshot Tests
 As the CI's Xcode version is the 14.4, snapshot tests are ran on Iphone 12 Pro Max (iOS 14.4). If you run on some different device or iOS version it will probably fail. That's some downside to snapshot test, as it's described in PixeTest library [documentation](https://github.com/KaneCheshire/PixelTest#readme)
 
 ## Dependencies ⚙️
