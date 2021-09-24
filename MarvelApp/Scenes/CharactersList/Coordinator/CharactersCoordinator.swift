@@ -12,16 +12,22 @@ protocol CharactersCoordinatorNavigation: AnyObject {
 }
 
 final class CharactersCoordinator {
-    var childCoordinators: [Coordinator] = []
     let window: UIWindow
 
     private var rootViewController: UINavigationController? {
         window.rootViewController as? UINavigationController
     }
 
-
     init(window: UIWindow) {
         self.window = window
+    }
+
+    private func present(viewController: UIViewController) {
+        let navigationController = UINavigationController()
+        navigationController.setupAppearance()
+        navigationController.viewControllers = [viewController]
+
+        rootViewController?.present(navigationController, animated: true)
     }
 }
 
@@ -46,15 +52,5 @@ extension CharactersCoordinator: CharactersCoordinatorNavigation {
         let viewController = CharacterDetailsViewController(viewModel: viewModel)
         viewController.modalPresentationStyle = .currentContext
         present(viewController: viewController)
-    }
-}
-
-extension CharactersCoordinator {
-    func present(viewController: UIViewController) {
-        let navigationController = UINavigationController()
-        navigationController.setupAppearance()
-        navigationController.viewControllers = [viewController]
-
-        rootViewController?.present(navigationController, animated: true)
     }
 }

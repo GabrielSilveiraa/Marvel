@@ -8,6 +8,7 @@
 import UIKit
 
 final class CharacterDetailsView: BaseView {
+    //MARK: - UI Variables
     let characterImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -25,6 +26,7 @@ final class CharacterDetailsView: BaseView {
         return tableView
     }()
 
+    //MARK: - BaseView Setup
     func initialize() {
         backgroundColor = .redMarvel
         addSubview(characterImageView)
@@ -36,6 +38,7 @@ final class CharacterDetailsView: BaseView {
         setupTableViewConstants()
     }
 
+    //MARK: - Private Functions
     private func setupCharacterImageViewConstraints() {
         addConstraints([characterImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
                         characterImageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),

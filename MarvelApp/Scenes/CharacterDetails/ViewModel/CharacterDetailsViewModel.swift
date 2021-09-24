@@ -26,7 +26,6 @@ struct CharacterDetailsViewModelOutput {
 }
 
 //MARK: - ViewModel -
-
 final class CharacterDetailsViewModel {
     let character: Character
     private lazy var collections = [CharacterCollectionItemSection.comics : character.comics.items,
@@ -62,6 +61,7 @@ final class CharacterDetailsViewModel {
     }
 }
 
+//MARK: - ViewModels's Protocol Conformance -
 extension CharacterDetailsViewModel: CharacterDetailsViewModelProtocol {
     func transform(input: CharacterDetailsViewModelInput) -> CharacterDetailsViewModelOutput {
         let sectionTappedEvent = retrieveSectionTappedEvent(input: input)
