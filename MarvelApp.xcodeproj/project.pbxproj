@@ -11,6 +11,8 @@
 		403A126A237A0A6F4CE6F546 /* Pods_MarvelApp_MarvelAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97410609F7320DB9D89DEA44 /* Pods_MarvelApp_MarvelAppTests.framework */; };
 		60E39A273BE989290463C594 /* Pods_MarvelApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12798D970C58AE55AD343C51 /* Pods_MarvelApp.framework */; };
 		943966C8293C39E363F192DC /* Pods_MarvelApp_MarvelSnapshotTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08382B0FD8BBF951D4C5A062 /* Pods_MarvelApp_MarvelSnapshotTests.framework */; };
+		CD21DF2B26FDDB2D006C88BC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD21DF2A26FDDB2D006C88BC /* Localizable.strings */; };
+		CD21DF3526FDDB76006C88BC /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD21DF3426FDDB76006C88BC /* String+Localization.swift */; };
 		CD4165C526F393AC00CA8ED1 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4165C126F393AC00CA8ED1 /* BaseView.swift */; };
 		CD4165C626F393AC00CA8ED1 /* ViewCodedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4165C226F393AC00CA8ED1 /* ViewCodedViewController.swift */; };
 		CD4165C726F393AC00CA8ED1 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4165C326F393AC00CA8ED1 /* Coordinator.swift */; };
@@ -93,6 +95,8 @@
 		97AA185F22B188305A072E03 /* Pods-MarvelAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelAppTests.debug.xcconfig"; path = "Target Support Files/Pods-MarvelAppTests/Pods-MarvelAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A231ABCECA0D7E911A36DDA2 /* Pods-MarvelApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelApp.debug.xcconfig"; path = "Target Support Files/Pods-MarvelApp/Pods-MarvelApp.debug.xcconfig"; sourceTree = "<group>"; };
 		AE8C35E3D67FD75B35D23E6E /* Pods-MarvelAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelAppTests.release.xcconfig"; path = "Target Support Files/Pods-MarvelAppTests/Pods-MarvelAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		CD21DF2A26FDDB2D006C88BC /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		CD21DF3426FDDB76006C88BC /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
 		CD4165C126F393AC00CA8ED1 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		CD4165C226F393AC00CA8ED1 /* ViewCodedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewCodedViewController.swift; sourceTree = "<group>"; };
 		CD4165C326F393AC00CA8ED1 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -215,6 +219,26 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		CD21DF2926FDDA4F006C88BC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CDE235B526F0E4FC0000DC99 /* Assets.xcassets */,
+				CDE235B726F0E4FC0000DC99 /* LaunchScreen.storyboard */,
+				CDE235BA26F0E4FC0000DC99 /* Info.plist */,
+				CD21DF2A26FDDB2D006C88BC /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CD21DF3A26FDDDD6006C88BC /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				CDE235AC26F0E4FB0000DC99 /* AppDelegate.swift */,
+				CDE235AE26F0E4FB0000DC99 /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
 		CD4165C026F3935400CA8ED1 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
@@ -296,6 +320,7 @@
 				CD4CB5F226F4FD510035CDA4 /* UICollectionView+DequeuingReusableCell.swift */,
 				CD4CB5F426F7C5D10035CDA4 /* UILabel+Init.swift */,
 				CD4CB5F726F7E4250035CDA4 /* UITextView+Init.swift */,
+				CD21DF3426FDDB76006C88BC /* String+Localization.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -447,15 +472,12 @@
 			isa = PBXGroup;
 			children = (
 				CD4165C926F3E3CE00CA8ED1 /* Scenes */,
-				CD4165C026F3935400CA8ED1 /* Infrastructure */,
-				CD52FB4C26F1010C008DFD07 /* Extensions */,
 				CDE235DC26F0F7190000DC99 /* Service */,
 				CD52FB5726F11838008DFD07 /* Models */,
-				CDE235AC26F0E4FB0000DC99 /* AppDelegate.swift */,
-				CDE235AE26F0E4FB0000DC99 /* SceneDelegate.swift */,
-				CDE235B526F0E4FC0000DC99 /* Assets.xcassets */,
-				CDE235B726F0E4FC0000DC99 /* LaunchScreen.storyboard */,
-				CDE235BA26F0E4FC0000DC99 /* Info.plist */,
+				CD4165C026F3935400CA8ED1 /* Infrastructure */,
+				CD52FB4C26F1010C008DFD07 /* Extensions */,
+				CD21DF2926FDDA4F006C88BC /* Resources */,
+				CD21DF3A26FDDDD6006C88BC /* AppDelegate */,
 			);
 			path = MarvelApp;
 			sourceTree = "<group>";
@@ -642,6 +664,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDE235B926F0E4FC0000DC99 /* LaunchScreen.storyboard in Resources */,
+				CD21DF2B26FDDB2D006C88BC /* Localizable.strings in Resources */,
 				CDE235B626F0E4FC0000DC99 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -849,6 +872,7 @@
 				CD52FB4E26F10146008DFD07 /* Encodable+Dictionary.swift in Sources */,
 				CD4165CE26F3E47200CA8ED1 /* CharactersViewModel.swift in Sources */,
 				CD4165D026F3E4EB00CA8ED1 /* CharactersView.swift in Sources */,
+				CD21DF3526FDDB76006C88BC /* String+Localization.swift in Sources */,
 				CDE235AF26F0E4FB0000DC99 /* SceneDelegate.swift in Sources */,
 				CD4CB5EF26F4F7C00035CDA4 /* CharacterCollectionViewCell.swift in Sources */,
 				CD4CB5F526F7C5D10035CDA4 /* UILabel+Init.swift in Sources */,
@@ -1097,7 +1121,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2AC5F23QLW;
-				INFOPLIST_FILE = MarvelApp/Info.plist;
+				INFOPLIST_FILE = MarvelApp/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1119,7 +1143,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2AC5F23QLW;
-				INFOPLIST_FILE = MarvelApp/Info.plist;
+				INFOPLIST_FILE = MarvelApp/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
