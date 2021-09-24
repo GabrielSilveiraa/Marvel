@@ -18,6 +18,7 @@ protocol CharactersViewModelProtocol {
 //MARK: - ViewModel's Input -
 struct CharactersViewModelInput {
     let viewDidLoad: AnyPublisher<Void, Never>
+    let didSelectCell: AnyPublisher<IndexPath, Never>
     let willDisplayCell: AnyPublisher<IndexPath, Never>
     let searchFilterTyped: AnyPublisher<String, Never>
     let reloadButtonTapped: AnyPublisher<Void, Never>
@@ -38,17 +39,21 @@ struct CharactersViewModelOutput {
 final class CharactersViewModel {
 
     //MARK: - Private variables
+    private let errorSubject: PassthroughSubject<Error, Never> = .init()
     private let service: CharactersServiceProtocol
     private let serviceRequestCount = 50
 
-    private var characters: [CharacterCellViewModel] = []
+    private weak var coordinator: CharactersCoordinatorNavigation?
+
+    private var subscriptions: Set<AnyCancellable> = .init()
+    private var characters: [Character] = []
     private var offset = 0
     private var filter = ""
-
-    private let errorSubject: PassthroughSubject<Error, Never> = .init()
-
-    init(service: CharactersServiceProtocol) {
+    
+    init(service: CharactersServiceProtocol, coordinator: CharactersCoordinatorNavigation?) {
+        self.coordinator = coordinator
         self.service = service
+
     }
 
     //MARK: - Private functions
@@ -87,10 +92,7 @@ final class CharactersViewModel {
     private func loadCharacters() -> AnyPublisher<[CharacterCellViewModel], Never> {
         service.getCharacters(filter: filter, offset: offset, limit: serviceRequestCount)
             .receive(on: RunLoop.main)
-            .map { characters in
-                characters.map { CharacterCellViewModel(character: $0) }
-            }
-            .catch { [weak self] error -> AnyPublisher<[CharacterCellViewModel], Never> in
+            .catch { [weak self] error -> AnyPublisher<[Character], Never> in
                 self?.errorSubject.send(error)
                 return Empty().eraseToAnyPublisher()
             }
@@ -99,19 +101,38 @@ final class CharactersViewModel {
                 self.offset == 0 ? self.characters = $0 : self.characters.append(contentsOf: $0)
             })
             .compactMap { [weak self] _ in self?.characters }
+            .map { characters in
+                characters.map { CharacterCellViewModel(character: $0) }
+            }
             .eraseToAnyPublisher()
+    }
+
+    private func setupBinding(input: CharactersViewModelInput) {
+        input.didSelectCell
+            .sink { [weak self] indexPath in
+                guard let self = self,
+                      indexPath.row < self.characters.count
+                else {
+                    return
+                }
+
+                let character = self.characters[indexPath.row]
+                self.coordinator?.navigateToCharacterDetails(character: character)
+            }
+            .store(in: &subscriptions)
     }
 }
 
 //MARK: - ViewModels's Protocol Conformance -
 extension CharactersViewModel: CharactersViewModelProtocol {
     func transform(input: CharactersViewModelInput) -> CharactersViewModelOutput {
+        setupBinding(input: input)
+
         let willDisplayCellEvent = retrieveScrollEvent(input: input)
         let searchFilterTypedEvent = retrieveFilterEvent(input: input)
         let reloadButtonEvent = retrieveReloadTapEvent(input: input)
 
         let charactersPublisher = Publishers.Merge4(input.viewDidLoad, willDisplayCellEvent, reloadButtonEvent, searchFilterTypedEvent)
-            .handleEvents(receiveOutput: { _ in print("Chamou") })
             .flatMap { [weak self] _ in
                 self?.loadCharacters() ?? Empty().eraseToAnyPublisher()
             }

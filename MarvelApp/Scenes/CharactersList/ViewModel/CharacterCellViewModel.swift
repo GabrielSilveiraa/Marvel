@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct CharacterCellViewModel {
     private let character: Character
 

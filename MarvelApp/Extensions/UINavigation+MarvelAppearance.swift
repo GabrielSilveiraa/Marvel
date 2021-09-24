@@ -12,7 +12,7 @@ extension UINavigationController {
         let appearance = UINavigationBarAppearance(idiom: .phone)
         appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
         appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-        appearance.backgroundColor = .redMarvel
+        appearance.backgroundColor = .blurredRedMarvel
         UINavigationBar.appearance().standardAppearance = appearance
         UINavigationBar.appearance().scrollEdgeAppearance = appearance
         

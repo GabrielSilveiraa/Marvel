@@ -15,17 +15,19 @@ final class CharacterCollectionViewCell: UICollectionViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
         imageView.kf.indicatorType = .activity
+        imageView.accessibilityIdentifier = "Cell character image"
         return imageView
     }()
 
     private var characterNameLabel: UILabel = {
-        .init(fontType: .bold, size: 16, textColor: .blackMarvel, numberOfLines: 2)
+        .init(fontType: .bold, size: 16, textColor: .blurredBlackMarvel, numberOfLines: 2)
     }()
 
     private let characterDescriptionTextView: UITextView = {
-        let textView = UITextView(fontType: .regular, size: 14, textColor: .blackMarvel)
+        let textView = UITextView(fontType: .regular, size: 14, textColor: .blurredBlackMarvel)
         textView.textContainerInset.left = 0
-        textView.textContainer.lineFragmentPadding = 0.0
+        textView.textContainer.lineFragmentPadding = 0
+        textView.isEditable = false
         return textView
     }()
 
@@ -73,16 +75,20 @@ final class CharacterCollectionViewCell: UICollectionViewCell {
                         characterDescriptionTextView.topAnchor.constraint(equalTo: characterNameLabel.bottomAnchor, constant: 8),
                         characterDescriptionTextView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5)])
     }
+}
 
-    //MARK: - Internal functions
+//MARK: - Internal
+extension CharacterCollectionViewCell {
+    static let reuseIdentifier = "CharacterCollectionViewCell"
+
+    var imageViewSnapshot: UIView? {
+        characterImageView.snapshotView(afterScreenUpdates: false)
+    }
+
     func configure(viewModel: CharacterCellViewModel) {
         accessibilityIdentifier = "Character Cell"
         characterImageView.kf.setImage(with: viewModel.imageUrl)
         characterNameLabel.text = viewModel.characterName
         characterDescriptionTextView.text = viewModel.characterDescription
     }
-}
-
-extension CharacterCollectionViewCell {
-    static let reuseIdentifier = "CharacterCollectionViewCell"
 }

@@ -51,4 +51,39 @@ final class MarvelAppUITests: XCTestCase {
 
         app.swipeUp()
     }
+
+    func testOpenCharacterDetailsScreen() {
+        // Needs network connection
+        let textField = app.textFields["Filter input text"]
+        XCTAssertTrue(textField.exists)
+
+        textField.tap()
+        textField.typeText("Spider-Man")
+
+        let collectionView = app.collectionViews["Collection of Characters"]
+        let cell = collectionView.cells["Character Cell"].firstMatch
+        XCTAssertTrue(cell.waitForExistence(timeout: 10))
+
+        cell.tap()
+
+        XCTAssertTrue(app.staticTexts["Spider-Man (1602)"].waitForExistence(timeout: 10))
+        let tableView = app.tables["Table of collections"]
+        XCTAssertTrue(tableView.exists)
+        let imageView = app.images["Character image"]
+        XCTAssertTrue(imageView.exists)
+
+        let comicsButton = app.buttons["Comics"]
+        XCTAssertTrue(comicsButton.exists)
+        comicsButton.tap()
+
+        let seriesButton = app.buttons["Series"]
+        XCTAssertTrue(seriesButton.exists)
+        seriesButton.tap()
+        
+        let storiesButton = app.buttons["Stories"]
+        XCTAssertTrue(storiesButton.exists)
+        storiesButton.tap()
+
+        XCTAssertEqual(tableView.tableRows.cells.count, 0)
+    }
 }
