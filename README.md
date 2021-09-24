@@ -3,8 +3,7 @@
 [![Actions Status: Build](https://github.com/GabrielSilveiraa/Marvel/actions/workflows/workflow.yml/badge.svg)](https://github.com/GabrielSilveiraa/Marvel/actions?query=workflow%3A"workflow")
 
 ## Demo 📱
-
-![](img/Characters.gif)![](img/CharacterDetails.gif)
+<img src="img/Characters.gif" width="400"/><img src="img/CharacterDetails.gif" width="400"/>
 
 ## Installation 🔌
 
@@ -71,4 +70,3 @@ A framework developed by myself to facilitate the http networking in Swift.
 ### Encryption
 
 * [Arcane](https://github.com/onmyway133/Arcane)
-
