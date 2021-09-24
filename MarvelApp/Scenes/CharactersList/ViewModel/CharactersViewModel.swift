@@ -138,9 +138,15 @@ extension CharactersViewModel: CharactersViewModelProtocol {
             }
             .eraseToAnyPublisher()
 
-        return .init(title: "Marvel Characters",
-                     reloadButtonTitle: "There was an error. Tap to reload",
+        return .init(title: Constants.marvelCharactersTitle,
+                     reloadButtonTitle: Constants.errorReloadButtonTitle,
                      cellsViewModel: charactersPublisher,
                      error: errorSubject.eraseToAnyPublisher())
     }
+}
+
+//MARK: - Constants -
+fileprivate enum Constants {
+    static let marvelCharactersTitle = "characters.title".localized
+    static let errorReloadButtonTitle = "characters.reloadButton.title".localized
 }

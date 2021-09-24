@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  MarvelApp
+
+  Created by Gabriel Miranda Silveira on 24/09/21.
+  
+*/
+
+// Characters
+"characters.title" = "Marvel Characters";
+"characters.reloadButton.title" = "There was an error. Tap to reload";
+"characters.search.title" = "Search";
