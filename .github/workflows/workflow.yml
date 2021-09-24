@@ -1,4 +1,4 @@
-name: Workflow
+name: Build & Test
 on: [push, pull_request]
 jobs:
   Test:

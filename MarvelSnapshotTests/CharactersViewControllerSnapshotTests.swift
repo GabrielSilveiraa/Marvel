@@ -61,12 +61,18 @@ fileprivate class MockCharactersViewModel: CharactersViewModelProtocol {
                                                                                   name: "Character",
                                                                                   description: "Description",
                                                                                   thumbnail: .init(path: "", extension: ""),
-                                                                                  resourceURI: "")),
+                                                                                  resourceURI: "",
+                                                                                  comics: .init(items: []),
+                                                                                  series: .init(items: []),
+                                                                                  stories: .init(items: []))),
                                           CharacterCellViewModel(character: .init(id: 1,
                                                                                   name: "Character 2",
                                                                                   description: "Description 2",
                                                                                   thumbnail: .init(path: "", extension: ""),
-                                                                                  resourceURI: ""))]).eraseToAnyPublisher(),
+                                                                                  resourceURI: "",
+                                                                                  comics: .init(items: []),
+                                                                                  series: .init(items: []),
+                                                                                  stories: .init(items: [])))]).eraseToAnyPublisher(),
                     error: Empty().eraseToAnyPublisher())
     }
 }
