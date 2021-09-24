@@ -242,6 +242,7 @@
 		CD4165C026F3935400CA8ED1 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				CDE235E326F0FD360000DC99 /* APIConfiguration */,
 				CD4165C126F393AC00CA8ED1 /* BaseView.swift */,
 				CD4165C326F393AC00CA8ED1 /* Coordinator.swift */,
 				CD4165C226F393AC00CA8ED1 /* ViewCodedViewController.swift */,
@@ -262,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				CD4165D526F3EFF900CA8ED1 /* Coordinator */,
+				CD99403026FDF4CC0058CBDC /* Service */,
 				CD4165D626F3F00000CA8ED1 /* ViewModel */,
 				CD4165D726F3F00500CA8ED1 /* ViewController */,
 				CD4165D826F3F01D00CA8ED1 /* View */,
@@ -426,6 +428,14 @@
 			path = Json;
 			sourceTree = "<group>";
 		};
+		CD99403026FDF4CC0058CBDC /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				CD52FB5526F11231008DFD07 /* CharactersService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		CDB554E426F8BAB000B090F3 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -472,7 +482,9 @@
 			isa = PBXGroup;
 			children = (
 				CD4165C926F3E3CE00CA8ED1 /* Scenes */,
-				CDE235DC26F0F7190000DC99 /* Service */,
+				CD4165C026F3935400CA8ED1 /* Infrastructure */,
+				CD52FB5726F11838008DFD07 /* Models */,
+				CD52FB4C26F1010C008DFD07 /* Extensions */,
 				CD52FB5726F11838008DFD07 /* Models */,
 				CD4165C026F3935400CA8ED1 /* Infrastructure */,
 				CD52FB4C26F1010C008DFD07 /* Extensions */,
@@ -500,15 +512,6 @@
 				CDE235D026F0E4FC0000DC99 /* Info.plist */,
 			);
 			path = MarvelAppUITests;
-			sourceTree = "<group>";
-		};
-		CDE235DC26F0F7190000DC99 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				CDE235E326F0FD360000DC99 /* APIConfiguration */,
-				CD52FB5526F11231008DFD07 /* CharactersService.swift */,
-			);
-			path = Service;
 			sourceTree = "<group>";
 		};
 		CDE235E326F0FD360000DC99 /* APIConfiguration */ = {
