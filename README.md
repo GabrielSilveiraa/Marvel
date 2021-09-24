@@ -44,7 +44,7 @@ During the project development Xcode 13.0 was released and I wanted to update th
 I used to have a free plan in Travis and had integrated this project with Travis CI. And, also during development, my plan has expired. So I had to migrate to Github Actions. It's working and testing the project fine. But I found some limitations, which I describe in this [pull request](https://github.com/GabrielSilveiraa/Marvel/pull/8).
 
 ### Codecovv Integration
-My integration with [Codecov](https://about.codecov.io/) was working fine on Travis, but after migrating to Github Action couldn't make it work. So, for now, there's not codecov badge. But you can check the project's code coverage at this [section](#code-coverage)
+My integration with [Codecov](https://about.codecov.io/) was working fine on Travis, but after migrating to Github Actions I couldn't make it work. For now there's not codecov badge, but you can check the project's code coverage at this [section](#code-coverage)
 
 ## Testing ✅
 
