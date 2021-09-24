@@ -12,7 +12,7 @@ final class CharactersView: BaseView {
     lazy var searchTextField: UITextField = {
         let textField = UITextField(frame: .zero)
         textField.backgroundColor = .white
-        textField.placeholder = "Search"
+        textField.placeholder = Constants.searchPlaceholder
         textField.layer.cornerRadius = 10
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 30))
         textField.leftViewMode = .always
@@ -104,4 +104,8 @@ final class CharactersView: BaseView {
         addConstraints([activityIndicatorView.centerXAnchor.constraint(equalTo: centerXAnchor),
                         activityIndicatorView.centerYAnchor.constraint(equalTo: centerYAnchor)])
     }
+}
+
+fileprivate enum Constants {
+    static let searchPlaceholder = "characters.search.title".localized
 }
