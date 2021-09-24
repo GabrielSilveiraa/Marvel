@@ -9,7 +9,8 @@ import UIKit
 import Combine
 
 final class CharactersViewController: ViewCodedViewController<CharactersView> {
-    let viewModel: CharactersViewModelProtocol
+    //MARK: - Private variables
+    private let viewModel: CharactersViewModelProtocol
 
     private lazy var viewModelOutput: CharactersViewModelOutput = {
         let input = CharactersViewModelInput(viewDidLoad: viewDidLoadSubject.eraseToAnyPublisher(),
@@ -20,6 +21,7 @@ final class CharactersViewController: ViewCodedViewController<CharactersView> {
         return viewModel.transform(input: input)
     }()
 
+    //MARK: TableView DataSource
     private lazy var collectionViewDataSource: UICollectionViewDiffableDataSource<Section, CharacterCellViewModel> = {
         .init(collectionView: customView.collectionView) { [unowned self] (collectionView, indexPath, cellViewModel) -> UICollectionViewCell in
             let cell: CharacterCollectionViewCell = self.customView.collectionView.dequeueReusableCell(indexPath: indexPath)
@@ -28,6 +30,7 @@ final class CharactersViewController: ViewCodedViewController<CharactersView> {
         }
     }()
 
+    //MARK: Subject inputs
     private let viewDidLoadSubject: CurrentValueSubject<Void, Never> = .init(())
     private let didSelectCellSubject: PassthroughSubject<IndexPath, Never> = .init()
     private let willDisplayCellSubject: PassthroughSubject<IndexPath, Never> = .init()
@@ -35,6 +38,7 @@ final class CharactersViewController: ViewCodedViewController<CharactersView> {
     private let searchFilterTypeSubject: PassthroughSubject<String, Never> = .init()
     private var subscriptions: Set<AnyCancellable> = .init()
 
+    //MARK: - Initialization
     init(viewModel: CharactersViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -44,6 +48,7 @@ final class CharactersViewController: ViewCodedViewController<CharactersView> {
         fatalError("init(coder:) has not been implemented")
     }
 
+    //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         viewDidLoadSubject.send(())
@@ -125,6 +130,7 @@ final class CharactersViewController: ViewCodedViewController<CharactersView> {
 
 }
 
+//MARK: - UICollectionViewDelegate Functions -
 extension CharactersViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         willDisplayCellSubject.send(indexPath)
@@ -135,12 +141,14 @@ extension CharactersViewController: UICollectionViewDelegate {
     }
 }
 
+//MARK: - UITextFieldDelegate Functions -
 extension CharactersViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         searchFilterTypeSubject.send(textField.text ?? "")
     }
 }
 
+//MARK: - Section enum -
 private enum Section {
     case main
 }

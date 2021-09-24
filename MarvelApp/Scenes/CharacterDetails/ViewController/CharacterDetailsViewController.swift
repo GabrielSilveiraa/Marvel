@@ -9,7 +9,8 @@ import UIKit
 import Combine
 
 final class CharacterDetailsViewController: ViewCodedViewController<CharacterDetailsView> {
-    let viewModel: CharacterDetailsViewModelProtocol
+    //MARK: - Private variables
+    private let viewModel: CharacterDetailsViewModelProtocol
 
     private lazy var viewModelOutput: CharacterDetailsViewModelOutput = {
         let input = CharacterDetailsViewModelInput(viewDidLoad: viewDidLoadSubject.eraseToAnyPublisher(),
@@ -26,10 +27,12 @@ final class CharacterDetailsViewController: ViewCodedViewController<CharacterDet
         }
     }()
 
+    //MARK: Subject inputs
     private let viewDidLoadSubject: PassthroughSubject<Void, Never> = .init()
     private let sectionTappedSubject: PassthroughSubject<CharacterCollectionItemSection, Never> = .init()
     private var subscriptions: Set<AnyCancellable> = .init()
 
+    //MARK: - Initialization
     init(viewModel: CharacterDetailsViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -39,6 +42,7 @@ final class CharacterDetailsViewController: ViewCodedViewController<CharacterDet
         fatalError("init(coder:) has not been implemented")
     }
 
+    //MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         title = viewModelOutput.title
@@ -48,6 +52,7 @@ final class CharacterDetailsViewController: ViewCodedViewController<CharacterDet
         viewDidLoadSubject.send(())
     }
 
+    //MARK: - Private Functions
     private func setupBindings() {
         viewModelOutput.cellsViewModel
             .first()
@@ -79,6 +84,7 @@ final class CharacterDetailsViewController: ViewCodedViewController<CharacterDet
     }
 }
 
+//MARK: - UITableViewDelegate Functions -
 extension CharacterDetailsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard !tableViewDataSource.snapshot().sectionIdentifiers.isEmpty else { return nil }
